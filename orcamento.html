@@ -1,0 +1,2646 @@
+<!doctype html>
+<html class="h-full" lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <title>
+      Parseals | Solicitação de Orçamento &amp; Engenharia de Vedações
+    </title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+          min-height: 100%;
+          overflow-x: hidden;
+          overflow-y: auto !important;
+        }
+        body {
+          overscroll-behavior-y: auto;
+        }
+      }
+      .sheet-shadow {
+        box-shadow:
+          0 10px 25px -5px rgba(0, 50, 30, 0.08),
+          0 8px 10px -6px rgba(0, 0, 0, 0.04);
+      }
+      .profile-card.active-profile {
+        border-color: #154a32 !important;
+        background-color: #f0fdf4 !important;
+        box-shadow: 0 0 0 2px #154a32 !important;
+      }
+      .filter-btn.active {
+        background-color: #154a32;
+        color: #ffffff;
+      }
+      #color-font {
+        color: white !important;
+      }
+
+      @media print {
+        @page {
+          size: A4 portrait;
+          margin: 8mm;
+        }
+        html,
+        body {
+          background: #ffffff !important;
+          color: #111827 !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          width: 100% !important;
+          height: auto !important;
+          min-height: auto !important;
+          overflow: visible !important;
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+        header,
+        footer,
+        nav,
+        aside,
+        section,
+        form,
+        #faq-accordion,
+        .interactive-controls,
+        .floating-actions,
+        .screen-only,
+        #rfq-success-card {
+          display: none !important;
+        }
+        #print-modal-clone,
+        #proforma-a4-sheet {
+          display: block !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+          position: relative !important;
+          width: 100% !important;
+          max-width: 190mm !important;
+          margin: 0 auto !important;
+          padding: 10mm !important;
+          border: 1px solid #cbd5e1 !important;
+          box-shadow: none !important;
+          background: #ffffff !important;
+          color: #111827 !important;
+          page-break-inside: avoid !important;
+        }
+        #proforma-a4-sheet * {
+          visibility: visible !important;
+        }
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#00321e",
+              "primary-container": "#154a32",
+              "on-primary-container": "#84b99a",
+              "primary-fixed": "#b8efcd",
+              "primary-fixed-dim": "#9dd2b2",
+              secondary: "#006e2d",
+              "secondary-container": "#7cf994",
+              "secondary-fixed-dim": "#62df7d",
+              "emerald-glow": "#10b981",
+              "industrial-dark": "#0a1c14",
+              surface: "#f9f9ff",
+              "surface-slate": "#f8fafc",
+              "surface-card": "#ffffff",
+              "surface-container": "#e7eeff",
+              "surface-container-low": "#f0f3ff",
+              "surface-container-high": "#dee8ff",
+              "on-surface": "#111c2d",
+              "on-surface-variant": "#414943",
+              "border-subtle": "#e2e8f0",
+              "border-precision": "#cbd5e1",
+              "urgent-red": "#dc2626",
+              "error-container": "#ffdad6",
+              "on-error-container": "#93000a",
+            },
+            fontFamily: {
+              "headline-lg": ["Space Grotesk", "sans-serif"],
+              "headline-sm": ["Space Grotesk", "sans-serif"],
+              "headline-md": ["Space Grotesk", "sans-serif"],
+              "headline-xl": ["Space Grotesk", "sans-serif"],
+              "label-caps": ["Space Grotesk", "sans-serif"],
+              "label-code": ["Space Grotesk", "monospace"],
+              "body-lg": ["Inter", "sans-serif"],
+              "body-md": ["Inter", "sans-serif"],
+              "body-sm": ["Inter", "sans-serif"],
+            },
+            spacing: {
+              "space-xs": "0.25rem",
+              "space-sm": "0.5rem",
+              "space-md": "1rem",
+              "space-lg": "1.5rem",
+              "space-xl": "2.5rem",
+              "space-2xl": "4rem",
+              margin: "2rem",
+            },
+          },
+        },
+      };
+    </script>
+    <style id="header-nav-sync-styles">
+      header nav a,
+      header .font-headline-sm,
+      header .text-body-sm {
+        font-size: 0.84375rem !important;
+        line-height: 1.25rem !important;
+        font-weight: 500;
+      }
+      header .px-space-sm {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+      }
+      header .py-space-xs {
+        padding-top: 0.375rem !important;
+        padding-bottom: 0.375rem !important;
+      }
+      header .gap-space-xs {
+        gap: 0.375rem !important;
+      }
+      header .font-label-code {
+        font-size: 0.8125rem !important;
+        font-weight: 500;
+      }
+      header nav a.bg-primary-container {
+        background-color: #e8f5e9 !important;
+        color: #154a32 !important;
+        font-weight: 600 !important;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface font-body-md text-on-surface antialiased selection:bg-secondary selection:text-white min-h-screen flex flex-col w-full overflow-x-hidden"
+  >
+    <header
+      class="sticky top-0 w-full z-50 bg-surface-card/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.06)] border-b border-border-subtle"
+    >
+      <div
+        class="h-20 max-w-7xl mx-auto px-margin flex items-center justify-between gap-space-md"
+      >
+        <div class="flex items-center gap-space-md">
+          <a
+            class="flex items-center gap-space-sm focus:outline-none"
+            data-path="inicio"
+            href="index.html"
+          >
+            <img
+              alt="Parseals Vedações &amp; Gaxetas"
+              class="h-10 w-auto object-contain"
+              src="img/logo_parseals_dark.jpeg"
+            />
+          </a>
+        </div>
+        <nav
+          class="hidden xl:flex items-center gap-space-xs"
+          data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"
+        >
+          <a
+            class="px-space-sm py-space-xs font-headline-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors rounded-lg"
+            data-path="inicio"
+            href="index.html"
+            >Início</a
+          >
+          <a
+            class="px-space-sm py-space-xs font-headline-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors rounded-lg"
+            data-path="sobre-a-parseals"
+            href="sobre.html"
+            >Sobre a Parseals</a
+          >
+          <a
+            class="px-space-sm py-space-xs font-headline-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors rounded-lg"
+            data-path="produtos"
+            href="produtos.html"
+            >Produtos</a
+          >
+          <a
+            class="px-space-sm py-space-xs font-headline-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors rounded-lg"
+            data-path="usinagem-sob-medida"
+            href="usinagem.html"
+            >Usinagem sob Medida</a
+          >
+          <a
+            class="px-space-sm py-space-xs font-headline-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors rounded-lg"
+            data-path="solicitar-orcamento"
+            href="orcamento.html"
+            >Solicitar Orçamento</a
+          >
+          <a
+            class="px-space-sm py-space-xs font-headline-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors rounded-lg"
+            data-path="contato"
+            href="contato.html"
+            >Contato</a
+          >
+        </nav>
+        <div class="flex items-center gap-space-sm">
+          <a
+            class="hidden sm:inline-flex items-center justify-center px-space-md py-space-xs rounded-lg bg-secondary text-on-secondary font-headline-sm text-body-sm hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed transition-colors shadow-sm gap-space-xs"
+            data-path="solicitar-orcamento"
+            id="color-font"
+            href="orcamento.html"
+          >
+            <span class="material-symbols-outlined text-[18px]"
+              >request_quote</span
+            >Cotar Agora
+          </a>
+          <a
+            class="inline-flex items-center justify-center px-space-sm py-space-xs rounded-lg bg-surface-container text-primary font-headline-sm text-body-sm hover:bg-surface-container-high transition-colors gap-space-xs"
+            href="https://wa.me/5541991099535"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span class="material-symbols-outlined text-secondary text-[18px]"
+              >chat</span
+            >
+            <span class="hidden md:inline font-label-code text-body-sm"
+              >WhatsApp</span
+            >
+          </a>
+        </div>
+      </div>
+    </header>
+    <main class="w-full flex-1">
+      <section
+        class="w-full bg-surface-slate text-on-surface py-10 lg:py-12 border-b border-border-subtle"
+        id="quote-section"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            class="flex flex-col lg:flex-row lg:items-end justify-between gap-6"
+          >
+            <div class="max-w-3xl space-y-3">
+              <div
+                class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-surface-container text-primary font-label-caps text-label-caps uppercase tracking-wider font-semibold"
+              >
+                <span
+                  class="material-symbols-outlined text-secondary text-[16px]"
+                  >engineering</span
+                >
+                Portal de Cotação Multi-Itens
+              </div>
+              <h1
+                class="font-headline-xl text-3xl sm:text-4xl text-primary-container font-bold tracking-tight"
+              >
+                Central de Cotações Rápidas &amp; Dimensionamento de Perfis
+              </h1>
+              <p
+                class="font-body-lg text-base sm:text-lg text-on-surface-variant leading-relaxed"
+              >
+                Adicione múltiplos itens à sua cotação corporativa com suporte
+                visual a perfis normatizados SKF, materiais de alto desempenho e
+                pré-visualização instantânea do espelho técnico em PDF.
+              </p>
+            </div>
+            <div
+              class="bg-surface-card rounded-xl p-4 sm:p-5 shadow-sm border border-border-subtle flex items-center gap-4 shrink-0"
+            >
+              <div
+                class="w-12 h-12 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary-container shrink-0"
+              >
+                <span class="material-symbols-outlined text-[28px]">timer</span>
+              </div>
+              <div>
+                <div
+                  class="font-label-caps text-label-caps text-on-surface-variant uppercase font-semibold"
+                >
+                  Tempo Médio de Retorno
+                </div>
+                <div class="font-headline-md text-2xl text-primary font-bold">
+                  38 minutos
+                </div>
+                <div
+                  class="font-body-sm text-xs sm:text-sm text-secondary font-medium"
+                >
+                  99.4% das proformas no mesmo dia
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="w-full bg-surface py-8 sm:py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div class="w-full lg:col-span-7 space-y-6">
+              <div
+                class="bg-surface-card p-5 sm:p-6 rounded-xl shadow-sm border border-border-subtle space-y-4"
+              >
+                <div
+                  class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-border-subtle gap-2"
+                >
+                  <div class="flex items-center gap-2">
+                    <span
+                      class="material-symbols-outlined text-secondary text-[24px]"
+                      >fact_check</span
+                    >
+                    <div>
+                      <h2
+                        class="font-headline-sm text-lg text-primary-container font-bold"
+                      >
+                        Itens da Cotação
+                      </h2>
+                      <p
+                        class="font-body-sm text-xs sm:text-sm text-on-surface-variant"
+                      >
+                        Vedações cadastradas nesta requisição formal
+                      </p>
+                    </div>
+                  </div>
+                  <span
+                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container font-label-code text-body-sm font-semibold text-primary"
+                    id="items-badge-count"
+                    >0 itens configurados</span
+                  >
+                </div>
+                <div class="space-y-3" id="configured-items-list"></div>
+                <div class="pt-2">
+                  <a
+                    class="w-full py-2.5 px-4 rounded-lg border-2 border-dashed border-primary-container/40 hover:border-primary-container bg-surface-container-low/60 hover:bg-surface-container text-primary-container font-headline-sm text-body-sm font-bold flex items-center justify-center gap-2 transition-all cursor-pointer"
+                    href="#item-config-card"
+                    onclick="startNewItem()"
+                  >
+                    <span class="material-symbols-outlined text-[20px]"
+                      >add_circle</span
+                    >
+                    <span>+ Adicionar Outro Item / Vedação a Esta Cotação</span>
+                  </a>
+                </div>
+              </div>
+
+              <form
+                class="space-y-6"
+                id="item-form"
+                onsubmit="event.preventDefault()"
+              >
+                <div
+                  class="bg-surface-card p-5 sm:p-6 rounded-xl shadow-sm border border-border-subtle space-y-5"
+                  id="item-config-card"
+                >
+                  <div
+                    class="flex items-center justify-between border-b border-border-subtle pb-3"
+                  >
+                    <div class="flex items-center gap-3">
+                      <span
+                        class="w-8 h-8 rounded-lg bg-primary-container text-white font-headline-sm flex items-center justify-center font-bold text-body-md"
+                        id="current-item-number"
+                        >01</span
+                      >
+                      <div>
+                        <h2
+                          class="font-headline-sm text-lg text-on-surface font-bold"
+                          id="item-form-title"
+                        >
+                          Configurar Nova Vedação
+                        </h2>
+                        <p
+                          class="font-body-sm text-xs sm:text-sm text-on-surface-variant"
+                        >
+                          Selecione o perfil geométrico SKF e preencha as
+                          medidas nominais
+                        </p>
+                      </div>
+                    </div>
+                    <span
+                      class="font-label-caps text-label-caps text-secondary font-bold uppercase bg-surface-container-low px-2 py-1 rounded"
+                      >Passo Ativo</span
+                    >
+                  </div>
+
+                  <div class="space-y-3">
+                    <div
+                      class="flex flex-col sm:flex-row sm:items-center justify-between gap-2"
+                    >
+                      <label
+                        class="block font-headline-sm text-body-sm text-on-surface font-bold"
+                        >1. Geometria &amp; Perfil SKF Seal Jet:</label
+                      >
+                      <div
+                        class="flex flex-wrap gap-1 bg-surface-slate p-1 rounded-lg border border-border-subtle text-xs"
+                      >
+                        <button
+                          class="filter-btn active px-2.5 py-1 rounded text-body-sm font-semibold transition-colors"
+                          onclick="filterProfiles('all', this)"
+                          type="button"
+                        >
+                          Todos
+                        </button>
+                        <button
+                          class="filter-btn px-2.5 py-1 rounded text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
+                          onclick="filterProfiles('rod', this)"
+                          type="button"
+                        >
+                          Haste
+                        </button>
+                        <button
+                          class="filter-btn px-2.5 py-1 rounded text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
+                          onclick="filterProfiles('piston', this)"
+                          type="button"
+                        >
+                          Êmbolo
+                        </button>
+                        <button
+                          class="filter-btn px-2.5 py-1 rounded text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
+                          onclick="filterProfiles('wiper', this)"
+                          type="button"
+                        >
+                          Raspador
+                        </button>
+                        <button
+                          class="filter-btn px-2.5 py-1 rounded text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
+                          onclick="filterProfiles('rotary', this)"
+                          type="button"
+                        >
+                          Rotativo
+                        </button>
+                        <button
+                          class="filter-btn px-2.5 py-1 rounded text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
+                          onclick="filterProfiles('guide', this)"
+                          type="button"
+                        >
+                          Guia
+                        </button>
+                      </div>
+                    </div>
+
+                    <div
+                      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5"
+                      id="profiles-grid"
+                    >
+                      <div
+                        class="profile-card active-profile cursor-pointer p-2.5 rounded-lg border border-border-subtle bg-surface-slate hover:bg-surface-container/50 transition-all relative flex flex-col justify-between"
+                        data-category="rod"
+                        onclick="
+                          selectProfile(
+                            this,
+                            'Perfil S01-R',
+                            'Gaxeta de Haste Asimétrica',
+                          )
+                        "
+                      >
+                        <div class="flex items-center justify-between mb-1">
+                          <span
+                            class="font-label-code text-[11px] font-bold text-primary-container bg-white px-1.5 py-0.5 rounded border border-border-subtle"
+                            >S01-R</span
+                          >
+                          <span
+                            class="selected-badge inline-flex items-center text-[10px] font-bold text-emerald-glow bg-primary-container px-1.5 py-0.2 rounded"
+                            >Ativo</span
+                          >
+                        </div>
+                        <div
+                          class="h-16 w-full flex items-center justify-center my-1 bg-white rounded border border-border-subtle p-1"
+                        >
+                          <svg
+                            class="h-full w-auto text-primary-container stroke-current"
+                            fill="none"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewbox="0 0 80 50"
+                          >
+                            <path
+                              d="M15,10 L50,10 L50,22 L35,22 L30,40 L18,40 L15,10 Z"
+                              fill="#b8efcd"
+                              fill-opacity="0.4"
+                            ></path>
+                            <path
+                              d="M25,18 L32,18"
+                              stroke="#154a32"
+                              stroke-width="2"
+                            ></path>
+                            <circle
+                              cx="28"
+                              cy="18"
+                              fill="#154a32"
+                              r="3"
+                            ></circle>
+                          </svg>
+                        </div>
+                        <div class="mt-1">
+                          <div
+                            class="font-headline-sm text-[12px] font-bold text-on-surface truncate"
+                          >
+                            Gaxeta de Haste
+                          </div>
+                          <div
+                            class="font-body-sm text-[11px] text-on-surface-variant truncate"
+                          >
+                            Lábio assimétrico dinâmico
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        class="profile-card cursor-pointer p-2.5 rounded-lg border border-border-subtle bg-surface-slate hover:bg-surface-container/50 transition-all relative flex flex-col justify-between"
+                        data-category="piston"
+                        onclick="
+                          selectProfile(
+                            this,
+                            'Perfil K01-P',
+                            'Gaxeta de Êmbolo/Pistão',
+                          )
+                        "
+                      >
+                        <div class="flex items-center justify-between mb-1">
+                          <span
+                            class="font-label-code text-[11px] font-bold text-primary-container bg-white px-1.5 py-0.5 rounded border border-border-subtle"
+                            >K01-P</span
+                          >
+                          <span
+                            class="selected-badge hidden items-center text-[10px] font-bold text-emerald-glow bg-primary-container px-1.5 py-0.2 rounded"
+                            >Ativo</span
+                          >
+                        </div>
+                        <div
+                          class="h-16 w-full flex items-center justify-center my-1 bg-white rounded border border-border-subtle p-1"
+                        >
+                          <svg
+                            class="h-full w-auto text-primary-container stroke-current"
+                            fill="none"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewbox="0 0 80 50"
+                          >
+                            <path
+                              d="M20,40 L55,40 L55,28 L40,28 L35,10 L23,10 L20,40 Z"
+                              fill="#b8efcd"
+                              fill-opacity="0.4"
+                            ></path>
+                            <circle
+                              cx="48"
+                              cy="20"
+                              fill="#154a32"
+                              r="3"
+                            ></circle>
+                          </svg>
+                        </div>
+                        <div class="mt-1">
+                          <div
+                            class="font-headline-sm text-[12px] font-bold text-on-surface truncate"
+                          >
+                            Gaxeta de Êmbolo
+                          </div>
+                          <div
+                            class="font-body-sm text-[11px] text-on-surface-variant truncate"
+                          >
+                            Pressão bilateral/unilat.
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        class="profile-card cursor-pointer p-2.5 rounded-lg border border-border-subtle bg-surface-slate hover:bg-surface-container/50 transition-all relative flex flex-col justify-between"
+                        data-category="wiper"
+                        onclick="
+                          selectProfile(
+                            this,
+                            'Perfil A01-A',
+                            'Raspador Industrial Simples',
+                          )
+                        "
+                      >
+                        <div class="flex items-center justify-between mb-1">
+                          <span
+                            class="font-label-code text-[11px] font-bold text-primary-container bg-white px-1.5 py-0.5 rounded border border-border-subtle"
+                            >A01-A</span
+                          >
+                          <span
+                            class="selected-badge hidden items-center text-[10px] font-bold text-emerald-glow bg-primary-container px-1.5 py-0.2 rounded"
+                            >Ativo</span
+                          >
+                        </div>
+                        <div
+                          class="h-16 w-full flex items-center justify-center my-1 bg-white rounded border border-border-subtle p-1"
+                        >
+                          <svg
+                            class="h-full w-auto text-primary-container stroke-current"
+                            fill="none"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewbox="0 0 80 50"
+                          >
+                            <path
+                              d="M20,12 L50,12 L50,24 L42,38 L30,38 L30,24 L20,24 Z"
+                              fill="#b8efcd"
+                              fill-opacity="0.4"
+                            ></path>
+                          </svg>
+                        </div>
+                        <div class="mt-1">
+                          <div
+                            class="font-headline-sm text-[12px] font-bold text-on-surface truncate"
+                          >
+                            Raspador Industrial
+                          </div>
+                          <div
+                            class="font-body-sm text-[11px] text-on-surface-variant truncate"
+                          >
+                            Proteção contra pó/cavaco
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        class="profile-card cursor-pointer p-2.5 rounded-lg border border-border-subtle bg-surface-slate hover:bg-surface-container/50 transition-all relative flex flex-col justify-between"
+                        data-category="rotary"
+                        onclick="
+                          selectProfile(
+                            this,
+                            'Perfil R01-R',
+                            'Retentor com Mola Helicoidal',
+                          )
+                        "
+                      >
+                        <div class="flex items-center justify-between mb-1">
+                          <span
+                            class="font-label-code text-[11px] font-bold text-primary-container bg-white px-1.5 py-0.5 rounded border border-border-subtle"
+                            >R01-R</span
+                          >
+                          <span
+                            class="selected-badge hidden items-center text-[10px] font-bold text-emerald-glow bg-primary-container px-1.5 py-0.2 rounded"
+                            >Ativo</span
+                          >
+                        </div>
+                        <div
+                          class="h-16 w-full flex items-center justify-center my-1 bg-white rounded border border-border-subtle p-1"
+                        >
+                          <svg
+                            class="h-full w-auto text-primary-container stroke-current"
+                            fill="none"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewbox="0 0 80 50"
+                          >
+                            <path
+                              d="M22,10 L58,10 L58,35 L48,35 L40,25 L32,25 L32,35 L22,35 Z"
+                              fill="#b8efcd"
+                              fill-opacity="0.4"
+                            ></path>
+                            <circle
+                              cx="36"
+                              cy="18"
+                              fill="#154a32"
+                              r="3.5"
+                            ></circle>
+                          </svg>
+                        </div>
+                        <div class="mt-1">
+                          <div
+                            class="font-headline-sm text-[12px] font-bold text-on-surface truncate"
+                          >
+                            Retentor Rotativo
+                          </div>
+                          <div
+                            class="font-body-sm text-[11px] text-on-surface-variant truncate"
+                          >
+                            C/ mola DIN 3760
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        class="profile-card cursor-pointer p-2.5 rounded-lg border border-border-subtle bg-surface-slate hover:bg-surface-container/50 transition-all relative flex flex-col justify-between"
+                        data-category="all"
+                        onclick="
+                          selectProfile(
+                            this,
+                            'O-Ring + Back-up',
+                            'Anel O-Ring com Anel Anti-extrusão',
+                          )
+                        "
+                      >
+                        <div class="flex items-center justify-between mb-1">
+                          <span
+                            class="font-label-code text-[11px] font-bold text-primary-container bg-white px-1.5 py-0.5 rounded border border-border-subtle"
+                            >AS-568</span
+                          >
+                          <span
+                            class="selected-badge hidden items-center text-[10px] font-bold text-emerald-glow bg-primary-container px-1.5 py-0.2 rounded"
+                            >Ativo</span
+                          >
+                        </div>
+                        <div
+                          class="h-16 w-full flex items-center justify-center my-1 bg-white rounded border border-border-subtle p-1"
+                        >
+                          <svg
+                            class="h-full w-auto text-primary-container stroke-current"
+                            fill="none"
+                            stroke-width="2"
+                            viewbox="0 0 80 50"
+                          >
+                            <circle
+                              cx="32"
+                              cy="25"
+                              fill="#b8efcd"
+                              fill-opacity="0.4"
+                              r="14"
+                            ></circle>
+                            <rect
+                              fill="#154a32"
+                              fill-opacity="0.3"
+                              height="28"
+                              rx="2"
+                              width="8"
+                              x="50"
+                              y="11"
+                            ></rect>
+                          </svg>
+                        </div>
+                        <div class="mt-1">
+                          <div
+                            class="font-headline-sm text-[12px] font-bold text-on-surface truncate"
+                          >
+                            O-Ring + Anti-Extrusão
+                          </div>
+                          <div
+                            class="font-body-sm text-[11px] text-on-surface-variant truncate"
+                          >
+                            Flanges e alta pressão
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        class="profile-card cursor-pointer p-2.5 rounded-lg border border-border-subtle bg-surface-slate hover:bg-surface-container/50 transition-all relative flex flex-col justify-between"
+                        data-category="guide"
+                        onclick="
+                          selectProfile(
+                            this,
+                            'Perfil F01-G',
+                            'Anel Guia / Cinta de Desgaste',
+                          )
+                        "
+                      >
+                        <div class="flex items-center justify-between mb-1">
+                          <span
+                            class="font-label-code text-[11px] font-bold text-primary-container bg-white px-1.5 py-0.5 rounded border border-border-subtle"
+                            >F01-G</span
+                          >
+                          <span
+                            class="selected-badge hidden items-center text-[10px] font-bold text-emerald-glow bg-primary-container px-1.5 py-0.2 rounded"
+                            >Ativo</span
+                          >
+                        </div>
+                        <div
+                          class="h-16 w-full flex items-center justify-center my-1 bg-white rounded border border-border-subtle p-1"
+                        >
+                          <svg
+                            class="h-full w-auto text-primary-container stroke-current"
+                            fill="none"
+                            stroke-width="2"
+                            viewbox="0 0 80 50"
+                          >
+                            <rect
+                              fill="#b8efcd"
+                              fill-opacity="0.4"
+                              height="22"
+                              rx="3"
+                              width="36"
+                              x="22"
+                              y="14"
+                            ></rect>
+                            <line
+                              stroke="#154a32"
+                              stroke-dasharray="2,2"
+                              x1="28"
+                              x2="28"
+                              y1="14"
+                              y2="36"
+                            ></line>
+                          </svg>
+                        </div>
+                        <div class="mt-1">
+                          <div
+                            class="font-headline-sm text-[12px] font-bold text-on-surface truncate"
+                          >
+                            Fita / Anel Guia
+                          </div>
+                          <div
+                            class="font-body-sm text-[11px] text-on-surface-variant truncate"
+                          >
+                            Carga radial de cilindro
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <input
+                      id="item-profile-input"
+                      type="hidden"
+                      value="Perfil S01-R (Gaxeta de Haste Asimétrica)"
+                    />
+                  </div>
+
+                  <div class="space-y-3 pt-3 border-t border-border-subtle">
+                    <div class="flex items-center justify-between">
+                      <label
+                        class="block font-headline-sm text-body-sm text-on-surface font-bold"
+                        >2. Medidas Reais do Canal Metálico:</label
+                      >
+                      <div
+                        class="flex items-center bg-surface-slate p-0.5 rounded border border-border-subtle text-xs"
+                      >
+                        <button
+                          class="px-2.5 py-0.5 rounded bg-white text-primary font-bold shadow-sm"
+                          id="btn-unit-mm"
+                          onclick="setUnit('mm')"
+                          type="button"
+                        >
+                          Milímetros (mm)
+                        </button>
+                        <button
+                          class="px-2.5 py-0.5 rounded text-on-surface-variant font-medium"
+                          id="btn-unit-in"
+                          onclick="setUnit('pol')"
+                          type="button"
+                        >
+                          Polegadas (pol)
+                        </button>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                      <div>
+                        <label
+                          class="block font-headline-sm text-[12px] text-on-surface font-semibold mb-1"
+                          for="item-din"
+                        >
+                          Ø Interno / Eixo (d)
+                          <span
+                            class="unit-text text-on-surface-variant text-[11px] font-normal"
+                            >(mm)</span
+                          >
+                        </label>
+                        <input
+                          class="w-full h-10 px-3 bg-surface-slate rounded border border-border-subtle font-label-code text-body-sm text-on-surface focus:bg-white focus:border-primary-container focus:outline-none"
+                          id="item-din"
+                          placeholder="Ex: 50,00"
+                          type="text"
+                        />
+                      </div>
+                      <div>
+                        <label
+                          class="block font-headline-sm text-[12px] text-on-surface font-semibold mb-1"
+                          for="item-dout"
+                        >
+                          Ø Externo / Camisa (D)
+                          <span
+                            class="unit-text text-on-surface-variant text-[11px] font-normal"
+                            >(mm)</span
+                          >
+                        </label>
+                        <input
+                          class="w-full h-10 px-3 bg-surface-slate rounded border border-border-subtle font-label-code text-body-sm text-on-surface focus:bg-white focus:border-primary-container focus:outline-none"
+                          id="item-dout"
+                          placeholder="Ex: 65,00"
+                          type="text"
+                        />
+                      </div>
+                      <div>
+                        <label
+                          class="block font-headline-sm text-[12px] text-on-surface font-semibold mb-1"
+                          for="item-h"
+                        >
+                          Altura / Canaleta (L/H)
+                          <span
+                            class="unit-text text-on-surface-variant text-[11px] font-normal"
+                            >(mm)</span
+                          >
+                        </label>
+                        <input
+                          class="w-full h-10 px-3 bg-surface-slate rounded border border-border-subtle font-label-code text-body-sm text-on-surface focus:bg-white focus:border-primary-container focus:outline-none"
+                          id="item-h"
+                          placeholder="Ex: 10,00"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="grid grid-cols-1 sm:grid-cols-12 gap-3 pt-3 border-t border-border-subtle items-end"
+                  >
+                    <div class="sm:col-span-8">
+                      <label
+                        class="block font-headline-sm text-[12px] text-on-surface font-semibold mb-1"
+                        for="item-mat"
+                        >Material / Elastômero Recomendado:</label
+                      >
+                      <select
+                        class="w-full h-10 px-3 bg-surface-slate rounded border border-border-subtle font-body-sm text-body-sm text-on-surface focus:bg-white focus:border-primary-container focus:outline-none"
+                        id="item-mat"
+                      >
+                        <option value="Técnico Avaliar / Não sei o material">
+                          Deixar a Parseals Especificar
+                        </option>
+                        <option value="PU H-ECOPUR (Verde Hidráulico)">
+                          PU H-ECOPUR Hidráulico (Atrito Reduzido e Alta
+                          Pressão)
+                        </option>
+                        <option value="NBR Nitrílica 70/90 Shore A">
+                          NBR (Nitrílica Padrão 70 / 90 Shore A)
+                        </option>
+                        <option value="FKM Viton® Alta Temperatura">
+                          FKM (Viton® Alta Temperatura / Fluidos Químicos)
+                        </option>
+                        <option value="PTFE + 15% Bronze / Carbono">
+                          PTFE Virgem / Carregado com Bronze
+                        </option>
+                        <option value="Silicone VMQ Grau Farmacêutico">
+                          Silicone VMQ Alimentício / Alta Temperatura
+                        </option>
+                      </select>
+                    </div>
+                    <div class="sm:col-span-4">
+                      <label
+                        class="block font-headline-sm text-[12px] text-on-surface font-semibold mb-1"
+                        for="item-qty"
+                        >Quantidade (Pçs):</label
+                      >
+                      <input
+                        class="w-full h-10 px-3 bg-surface-slate rounded border border-border-subtle font-label-code text-body-sm text-on-surface focus:bg-white focus:border-primary-container focus:outline-none"
+                        id="item-qty"
+                        min="1"
+                        type="number"
+                        placeholder="1"
+                      />
+                    </div>
+                  </div>
+
+                  <div
+                    class="pt-3 flex flex-col sm:flex-row items-center justify-between gap-3"
+                  >
+                    <span
+                      class="text-body-sm text-on-surface-variant font-label-code text-xs"
+                      >Validação geométrica automática para torno SKF Seal
+                      Jet</span
+                    >
+                    <button
+                      class="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-primary-container text-white font-headline-sm text-body-sm font-bold hover:bg-primary transition-all flex items-center justify-center gap-2 shadow-sm cursor-pointer"
+                      id="btn-save-item"
+                      type="button"
+                      onclick="handleAddItem()"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >playlist_add</span
+                      >
+                      <span>Salvar &amp; Incluir na Cotação</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div
+                  class="bg-surface-card p-5 sm:p-6 rounded-xl shadow-sm border border-border-subtle space-y-4"
+                >
+                  <div
+                    class="flex items-center gap-3 border-b border-border-subtle pb-3"
+                  >
+                    <span
+                      class="w-8 h-8 rounded-lg bg-surface-container text-primary-container font-headline-sm flex items-center justify-center font-bold text-body-md"
+                      >04</span
+                    >
+                    <div>
+                      <h2
+                        class="font-headline-sm text-lg text-on-surface font-bold"
+                      >
+                        Condições de Trabalho &amp; Regime de Urgência
+                      </h2>
+                      <p
+                        class="font-body-sm text-xs sm:text-sm text-on-surface-variant"
+                      >
+                        Parâmetros dinâmicos aplicados a toda a requisição
+                        técnica
+                      </p>
+                    </div>
+                  </div>
+                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <div>
+                      <label
+                        class="block font-headline-sm text-[12px] text-on-surface font-semibold mb-1"
+                        for="geral-pressao"
+                        >Pressão Máx. de Trabalho</label
+                      >
+                      <input
+                        class="w-full h-10 px-3 bg-surface-slate rounded border border-border-subtle text-body-sm text-on-surface focus:bg-white focus:outline-none"
+                        id="geral-pressao"
+                        oninput="updateProformaDraft()"
+                        type="text"
+                        placeholder="210 bar (3000 PSI)"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        class="block font-headline-sm text-[12px] text-on-surface font-semibold mb-1"
+                        for="geral-temp"
+                        >Temperatura Operacional</label
+                      >
+                      <input
+                        class="w-full h-10 px-3 bg-surface-slate rounded border border-border-subtle text-body-sm text-on-surface focus:bg-white focus:outline-none"
+                        id="geral-temp"
+                        oninput="updateProformaDraft()"
+                        placeholder="Ex: -20°C a 120°C"
+                        type="text"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        class="block font-headline-sm text-[12px] text-on-surface font-semibold mb-1"
+                        for="geral-fluido"
+                        >Fluido em Contato</label
+                      >
+                      <input
+                        class="w-full h-10 px-3 bg-surface-slate rounded border border-border-subtle text-body-sm text-on-surface focus:bg-white focus:outline-none"
+                        id="geral-fluido"
+                        oninput="updateProformaDraft()"
+                        placeholder="Ex: Óleo Hidráulico ISO 68"
+                        type="text"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label
+                      class="block font-headline-sm text-[12px] text-on-surface font-semibold mb-2"
+                      >Classificação de Prioridade Logística:</label
+                    >
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                      <label
+                        class="p-2.5 rounded-lg border border-border-subtle bg-surface-slate cursor-pointer hover:border-primary-container flex items-center justify-between"
+                      >
+                        <div>
+                          <span
+                            class="font-headline-sm text-body-sm font-bold block text-on-surface"
+                            >Padrão / Estoque</span
+                          >
+                          <span
+                            class="font-body-sm text-[11px] text-on-surface-variant"
+                            >Reposição programada</span
+                          >
+                        </div>
+                        <input
+                          class="text-primary-container focus:ring-secondary"
+                          checked=""
+                          name="order_urgency"
+                          onchange="updateProformaDraft()"
+                          type="radio"
+                          value="Padrão"
+                        />
+                      </label>
+                      <label
+                        class="p-2.5 rounded-lg border border-border-subtle bg-surface-slate cursor-pointer hover:border-primary-container flex items-center justify-between"
+                      >
+                        <div>
+                          <span
+                            class="font-headline-sm text-body-sm font-bold block text-on-surface"
+                            >Projeto / Protótipo</span
+                          >
+                          <span
+                            class="font-body-sm text-[11px] text-on-surface-variant"
+                            >Validação dimensional</span
+                          >
+                        </div>
+                        <input
+                          class="text-primary-container focus:ring-secondary"
+                          name="order_urgency"
+                          onchange="updateProformaDraft()"
+                          type="radio"
+                          value="Projeto"
+                        />
+                      </label>
+                      <label
+                        class="p-2.5 rounded-lg border border-urgent-red/40 bg-error-container/20 cursor-pointer hover:border-urgent-red flex items-center justify-between"
+                      >
+                        <div>
+                          <span
+                            class="font-headline-sm text-body-sm font-bold block text-urgent-red flex items-center gap-1"
+                          >
+                            <span class="material-symbols-outlined text-[16px]"
+                              >warning</span
+                            >
+                            Linha Parada
+                          </span>
+                          <span
+                            class="font-body-sm text-[11px] text-on-error-container"
+                            >Despacho em 24h</span
+                          >
+                        </div>
+                        <input
+                          class="text-urgent-red focus:ring-urgent-red"
+                          name="order_urgency"
+                          onchange="updateProformaDraft()"
+                          type="radio"
+                          value="Linha Parada (Urgente)"
+                        />
+                      </label>
+                    </div>
+                  </div>
+
+                  <div
+                    class="bg-surface-slate p-5 rounded-lg border border-dashed border-border-precision flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-container/50 transition-colors"
+                    onclick="document.getElementById('tech-file').click()"
+                  >
+                    <input
+                      accept=".pdf,.dwg,.dxf,.step,.stp,.jpg,.png"
+                      class="hidden"
+                      id="tech-file"
+                      multiple=""
+                      onchange="handleProformaFile(this)"
+                      type="file"
+                    />
+                    <span
+                      class="material-symbols-outlined text-primary-container text-[28px] mb-1"
+                      >attach_file</span
+                    >
+                    <span
+                      class="font-headline-sm text-body-sm font-semibold text-on-surface"
+                      >Anexar Desenho Técnico, DWG ou Foto do Componente</span
+                    >
+                    <span
+                      class="font-body-sm text-[11px] text-on-surface-variant"
+                      >Extensões suportadas: PDF, DWG, STEP, PNG, JPG (Até
+                      25MB)</span
+                    >
+                    <span
+                      class="font-label-code text-xs text-secondary font-bold mt-1 hidden"
+                      id="attached-files-text"
+                    ></span>
+                  </div>
+                </div>
+
+                <div
+                  class="bg-surface-card p-5 sm:p-6 rounded-xl shadow-sm border border-border-subtle space-y-4 overflow-hidden"
+                >
+                  <div
+                    class="flex items-center gap-3 border-b border-border-subtle pb-3"
+                  >
+                    <span
+                      class="w-8 h-8 rounded-lg bg-surface-container text-primary-container font-headline-sm flex items-center justify-center font-bold text-body-md"
+                      >05</span
+                    >
+                    <div>
+                      <h2
+                        class="font-headline-sm text-lg text-on-surface font-bold"
+                      >
+                        Dados Cadastrais para Proposta Comercial
+                      </h2>
+                      <p
+                        class="font-body-sm text-xs sm:text-sm text-on-surface-variant"
+                      >
+                        Emissão nominal do espelho comercial e validação de
+                        faturamento
+                      </p>
+                    </div>
+                  </div>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <label
+                        class="block font-headline-sm text-[12px] text-on-surface font-semibold mb-1"
+                        for="cli-empresa"
+                        >Razão Social ou CNPJ *</label
+                      >
+                      <input
+                        class="w-full h-10 px-3 bg-surface-slate rounded border border-border-subtle text-body-sm text-on-surface focus:bg-white focus:outline-none"
+                        id="cli-empresa"
+                        oninput="updateProformaDraft()"
+                        required
+                        type="text"
+                        placeholder="Ex: Trizottech Tecnologia LTDA"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        class="block font-headline-sm text-[12px] text-on-surface font-semibold mb-1"
+                        for="cli-nome"
+                        >Nome do Responsável / Solicitante *</label
+                      >
+                      <input
+                        class="w-full h-10 px-3 bg-surface-slate rounded border border-border-subtle text-body-sm text-on-surface focus:bg-white focus:outline-none"
+                        id="cli-nome"
+                        oninput="updateProformaDraft()"
+                        required
+                        type="text"
+                        placeholder="Ex: Alan Trizotte"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        class="block font-headline-sm text-[12px] text-on-surface font-semibold mb-1"
+                        for="cli-email"
+                        >E-mail Corporativo *</label
+                      >
+                      <input
+                        class="w-full h-10 px-3 bg-surface-slate rounded border border-border-subtle text-body-sm text-on-surface focus:bg-white focus:outline-none"
+                        id="cli-email"
+                        oninput="updateProformaDraft()"
+                        required
+                        type="email"
+                        placeholder="Ex: alan.trizotte@trizottech.com.br"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        class="block font-headline-sm text-[12px] text-on-surface font-semibold mb-1"
+                        for="cli-tel"
+                        >WhatsApp / Telefone Direto *</label
+                      >
+                      <input
+                        class="w-full h-10 px-3 bg-surface-slate rounded border border-border-subtle text-body-sm text-on-surface focus:bg-white focus:outline-none"
+                        id="cli-tel"
+                        oninput="updateProformaDraft()"
+                        required
+                        type="tel"
+                        placeholder="Ex: (41) 99999-9999"
+                      />
+                    </div>
+                  </div>
+
+                  <div
+                    class="p-3 bg-surface-container-low rounded-lg border border-primary-container/20 flex items-start gap-2.5"
+                  >
+                    <span
+                      class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5"
+                      >forward_to_inbox</span
+                    >
+                    <div
+                      class="font-body-sm text-xs text-on-surface-variant leading-relaxed"
+                    >
+                      <strong class="text-primary-container font-semibold"
+                        >Processamento Direto da Engenharia:</strong
+                      >
+                      A cotação técnica e o espelho proforma serão processados e
+                      deverão ser direcionados diretamente para a equipe técnica
+                      (<span class="font-label-code text-primary font-bold"
+                        >trizotte.alan@gmail.com</span
+                      >).
+                    </div>
+                  </div>
+
+                  <div class="pt-3 border-t border-border-subtle space-y-3">
+                    <div class="flex items-start gap-2">
+                      <input
+                        checked=""
+                        class="mt-0.5 rounded text-secondary focus:ring-secondary"
+                        id="terms-agree"
+                        type="checkbox"
+                      />
+                      <label
+                        class="font-body-sm text-[12px] text-on-surface-variant"
+                        for="terms-agree"
+                      >
+                        Autorizo a geração do espelho proforma com análise
+                        técnica e emissão de laudos de compatibilidade química
+                        da Parseals Vedações.
+                      </label>
+                    </div>
+                    <div class="pt-2 w-full space-y-3">
+                      <div
+                        class="flex items-center gap-2 text-xs text-on-surface-variant font-label-code"
+                      >
+                        <span
+                          class="material-symbols-outlined text-emerald-glow text-[18px]"
+                          >verified_user</span
+                        >
+                        <span>Canal Direto B2B sem Pedido Mínimo</span>
+                      </div>
+                      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
+                        <button
+                          class="w-full py-2.5 px-3 rounded-lg bg-primary-container text-white font-headline-sm text-xs font-semibold hover:bg-primary transition-all flex items-center justify-center gap-2 shadow-sm cursor-pointer"
+                          onclick="submitFullRfq()"
+                          type="button"
+                        >
+                          <span class="material-symbols-outlined text-[18px]"
+                            >mail</span
+                          >
+                          <span class="truncate"
+                            >Enviar Cotação via E-mail</span
+                          >
+                        </button>
+                        <button
+                          class="w-full py-2.5 px-3 rounded-lg bg-[#25D366] hover:bg-[#1eb954] text-white font-headline-sm text-xs font-semibold transition-all flex items-center justify-center gap-2 shadow-sm cursor-pointer"
+                          onclick="submitViaWhatsApp()"
+                          type="button"
+                        >
+                          <span class="material-symbols-outlined text-[18px]"
+                            >chat</span
+                          >
+                          <span class="truncate"
+                            >Enviar Cotação via WhatsApp</span
+                          >
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+
+              <div
+                class="hidden bg-surface-card p-6 sm:p-8 rounded-xl shadow-lg border-2 border-secondary space-y-4"
+                id="rfq-success-card"
+              >
+                <div class="flex items-center gap-3 text-secondary">
+                  <span class="material-symbols-outlined text-[42px]"
+                    >check_circle</span
+                  >
+                  <div>
+                    <h3
+                      class="font-headline-lg text-xl sm:text-2xl text-primary-container font-bold"
+                    >
+                      Cotação #CQ-2026-00001 realizada com sucesso!
+                    </h3>
+                  </div>
+                </div>
+                <div
+                  class="p-3.5 bg-surface-container rounded-lg border border-secondary/30 text-on-surface font-body-sm space-y-1"
+                >
+                  <div
+                    class="font-semibold text-primary-container flex items-center gap-1.5"
+                  >
+                    <span
+                      class="material-symbols-outlined text-secondary text-[18px]"
+                      >mail</span
+                    >
+                    <span>Confirmação de Encaminhamento Técnico:</span>
+                  </div>
+                  <p class="text-xs sm:text-sm text-on-surface leading-relaxed">
+                    Cotação realizada com sucesso, encaminhe para nossa central
+                    técnica com espelho proforma (<strong
+                      class="font-label-code text-primary"
+                      >trizotte.alan@gmail.com</strong
+                    >)
+                  </p>
+                </div>
+                <p class="font-body-md text-on-surface text-sm sm:text-base">
+                  Após o envio nossa equipe técnica realizara a verificação das
+                  tolerâncias e enviará a proposta comercial formal carimbada no
+                  seu e-mail corporativo em até <strong>2 horas úteis</strong>.
+                </p>
+                <div class="flex flex-wrap gap-3 pt-2">
+                  <button
+                    class="px-4 py-2.5 rounded-lg bg-primary-container text-white font-headline-sm text-body-sm font-semibold flex items-center gap-1.5 hover:bg-primary shadow-sm"
+                    onclick="printProformaPDF()"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >print</span
+                    >
+                    Imprimir / Baixar Espelho PDF
+                  </button>
+                  <button
+                    class="px-4 py-2.5 rounded-lg bg-surface-container text-primary font-headline-sm text-body-sm font-semibold flex items-center gap-1.5 hover:bg-surface-container-high transition-colors"
+                    onclick="resetQuoteForm()"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >add_circle</span
+                    >
+                    Iniciar Nova Cotação
+                  </button>
+                  <a
+                    class="px-4 py-2.5 rounded-lg bg-secondary text-white font-headline-sm text-body-sm font-semibold flex items-center gap-1.5 hover:bg-secondary-fixed-dim shadow-sm"
+                    href="https://wa.me/5541991099535"
+                    target="_blank"
+                  >
+                    <span class="material-symbols-outlined text-[18px]"
+                      >chat</span
+                    >
+                    Priorizar via WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <aside
+              class="w-full lg:col-span-5 lg:sticky lg:top-24 self-start space-y-6"
+            >
+              <div
+                class="bg-surface-card rounded-xl border border-border-subtle shadow-lg overflow-hidden flex flex-col"
+              >
+                <div
+                  class="bg-industrial-dark text-white px-3.5 py-2.5 flex items-center justify-between border-b border-white/10"
+                >
+                  <div class="flex items-center gap-2">
+                    <span
+                      class="material-symbols-outlined text-emerald-glow text-[18px]"
+                      >picture_as_pdf</span
+                    >
+                    <span
+                      class="font-label-code text-xs font-bold tracking-wider uppercase text-white/90"
+                      >Espelho Proforma (PDF)</span
+                    >
+                  </div>
+                  <div class="flex items-center gap-1.5">
+                    <span
+                      class="hidden sm:inline-block px-2 py-0.5 rounded bg-white/10 font-label-code text-[10px] text-white/70"
+                      >Pág. 1 / 1 • 100%</span
+                    >
+                    <button
+                      class="px-2.5 py-1 rounded bg-white/10 hover:bg-white/20 text-white text-[11px] font-label-code flex items-center gap-1 transition-colors"
+                      onclick="openPdfModalViewer()"
+                      title="Visualizar em Tela Cheia"
+                      type="button"
+                    >
+                      <span class="material-symbols-outlined text-[14px]"
+                        >visibility</span
+                      >
+                      <span class="hidden sm:inline">Visualizar</span>
+                    </button>
+                    <button
+                      class="px-2.5 py-1 rounded bg-secondary hover:bg-secondary-fixed-dim text-white text-[11px] font-label-code flex items-center gap-1 transition-colors shadow-sm"
+                      onclick="printProformaPDF()"
+                      title="Imprimir / Salvar em PDF"
+                      type="button"
+                    >
+                      <span class="material-symbols-outlined text-[14px]"
+                        >download</span
+                      >
+                      <span class="hidden sm:inline">Baixar PDF</span>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="bg-surface-slate/80 p-3 sm:p-4 flex justify-center items-start overflow-hidden"
+                >
+                  <div
+                    class="w-full bg-white rounded border border-border-subtle shadow-md font-body-sm text-on-surface text-[11px] p-4 space-y-3 relative"
+                    id="proforma-a4-sheet"
+                  >
+                    <div
+                      class="flex flex-col sm:flex-row items-start justify-between border-b border-border-subtle pb-2.5 gap-2"
+                    >
+                      <div class="flex items-start gap-2.5">
+                        <img
+                          alt="Parseals"
+                          class="h-8 w-auto object-contain mt-0.5"
+                          src="img/logo_parseals_dark.jpeg"
+                        />
+                        <div class="flex flex-col leading-tight">
+                          <span
+                            class="font-headline-sm text-xs font-bold text-primary-container"
+                            >PARSEALS INDÚSTRIA &amp; VEDAÇÕES</span
+                          >
+                          <span
+                            class="text-[9px] text-on-surface-variant font-label-code"
+                            >CNPJ: 14.882.301/0001-94 • Curitiba - PR</span
+                          >
+                          <div
+                            class="text-[8.5px] text-on-surface-variant font-label-code mt-1 flex flex-wrap gap-x-2 gap-y-0.5"
+                          >
+                            <span
+                              ><strong>Telefone:</strong> (41) 9999-9999</span
+                            >
+                            <span
+                              ><strong>WhatsApp:</strong> (41) 99999-9999</span
+                            >
+                            <span
+                              ><strong>E-mail:</strong>
+                              parseals@parseals.com.br</span
+                            >
+                          </div>
+                          <span
+                            class="text-[8px] text-on-surface-variant font-label-code mt-0.5"
+                            >Rua Brazílio de Araújo, 960 - Neoville, Curitiba/PR
+                            - CEP: 81312-050</span
+                          >
+                        </div>
+                      </div>
+                      <div class="text-right shrink-0">
+                        <span
+                          class="inline-block px-1.5 py-0.5 rounded bg-surface-container font-label-code text-[10px] font-bold text-primary"
+                          >#CQ-2026-00001</span
+                        >
+                        <div
+                          class="text-[9px] text-on-surface-variant font-label-code mt-0.5"
+                          id="proforma-date"
+                        >
+                          Data: 28/09/2026
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="bg-surface-slate p-2 rounded border border-border-subtle flex flex-col gap-1.5"
+                    >
+                      <div
+                        class="flex items-center justify-between border-b border-border-subtle/60 pb-1"
+                      >
+                        <span
+                          class="font-label-caps text-[9px] uppercase font-bold text-on-surface-variant"
+                          >Cliente / Faturamento:</span
+                        >
+                        <span
+                          class="inline-flex items-center gap-1 text-[9px] font-bold text-primary bg-primary-fixed px-1.5 py-0.2 rounded"
+                          id="pdf-status-badge"
+                        >
+                          <span
+                            class="w-1.5 h-1.5 rounded-full bg-emerald-glow"
+                          ></span>
+                          <span id="pdf-status"
+                            >Aguardando Envio para Análise</span
+                          >
+                        </span>
+                      </div>
+                      <div class="grid grid-cols-2 gap-x-2 gap-y-1 text-[10px]">
+                        <div>
+                          <span class="text-on-surface-variant block text-[9px]"
+                            >Razão Social:</span
+                          >
+                          <strong
+                            class="font-medium text-on-surface truncate block"
+                            id="pdf-preview-company"
+                            >Não informada</strong
+                          >
+                        </div>
+                        <div>
+                          <span class="text-on-surface-variant block text-[9px]"
+                            >Contato:</span
+                          >
+                          <strong
+                            class="font-medium text-on-surface truncate block"
+                            id="pdf-preview-contact"
+                            >Não informado</strong
+                          >
+                        </div>
+                        <div>
+                          <span class="text-on-surface-variant block text-[9px]"
+                            >E-mail:</span
+                          >
+                          <span
+                            class="text-on-surface font-label-code truncate block"
+                            id="pdf-preview-email"
+                            >Não informado</span
+                          >
+                        </div>
+                        <div>
+                          <span class="text-on-surface-variant block text-[9px]"
+                            >Telefone / WhatsApp:</span
+                          >
+                          <span
+                            class="text-primary font-bold font-label-code truncate block"
+                            id="pdf-preview-phone"
+                            >Não informado</span
+                          >
+                        </div>
+                        <div class="col-span-2">
+                          <span
+                            class="text-on-surface-variant inline text-[9px]"
+                            >Regime de Urgência:
+                          </span>
+                          <span
+                            class="text-urgent-red font-bold font-label-code"
+                            id="pdf-preview-urgency"
+                            >Linha Parada (Urgente)</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="space-y-1">
+                      <div class="flex items-center justify-between">
+                        <span
+                          class="font-label-caps text-[9px] uppercase font-bold text-primary-container"
+                          >Itens na Cotação</span
+                        >
+                        <span
+                          class="font-label-code text-[9px] text-on-surface-variant"
+                          id="pdf-table-items-count"
+                          >Total: 0 itens</span
+                        >
+                      </div>
+                      <div
+                        class="border border-border-subtle rounded overflow-hidden"
+                      >
+                        <table
+                          class="w-full text-left border-collapse text-[10px]"
+                        >
+                          <thead
+                            class="bg-surface-slate font-label-code text-[9px] text-on-surface-variant border-b border-border-subtle"
+                          >
+                            <tr>
+                              <th class="py-1 px-1.5">Item</th>
+                              <th class="py-1 px-1.5">
+                                Descrição &amp; Perfil
+                              </th>
+                              <th class="py-1 px-1.5">Dimensões (d×D×L)</th>
+                              <th class="py-1 px-1.5 text-right">Qtd</th>
+                            </tr>
+                          </thead>
+                          <tbody
+                            class="divide-y divide-border-subtle font-body-sm"
+                            id="pdf-items-tbody"
+                          ></tbody>
+                        </table>
+                      </div>
+                    </div>
+
+                    <div
+                      class="p-2 bg-surface-container-low rounded border border-border-subtle text-[9px] font-label-code text-on-surface-variant grid grid-cols-3 gap-1.5"
+                    >
+                      <div>
+                        <span class="text-on-surface-variant block"
+                          >Pressão:</span
+                        >
+                        <strong class="text-primary" id="pdf-param-pressao"
+                          >210 bar (3000 PSI)</strong
+                        >
+                      </div>
+                      <div>
+                        <span class="text-on-surface-variant block">Temp:</span>
+                        <strong class="text-primary" id="pdf-param-temp"
+                          >-20°C a +110°C</strong
+                        >
+                      </div>
+                      <div>
+                        <span class="text-on-surface-variant block"
+                          >Fluido:</span
+                        >
+                        <strong
+                          class="text-primary truncate block"
+                          id="pdf-param-fluido"
+                          >Óleo Mineral ISO VG 68</strong
+                        >
+                      </div>
+                    </div>
+
+                    <div
+                      class="pt-2 border-t border-border-subtle space-y-1 text-[8.5px] text-on-surface-variant"
+                    >
+                      <div
+                        class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1"
+                      >
+                        <div class="flex items-center gap-1.5">
+                          <span
+                            class="inline-flex items-center gap-0.5 font-label-code text-primary-container font-semibold"
+                          >
+                            <span
+                              class="material-symbols-outlined text-secondary text-[12px]"
+                              >verified</span
+                            >
+                            ISO 9001:2015
+                          </span>
+                          <span>•</span>
+                          <span
+                            class="inline-flex items-center gap-0.5 font-label-code text-primary-container font-semibold"
+                          >
+                            <span
+                              class="material-symbols-outlined text-secondary text-[12px]"
+                              >precision_manufacturing</span
+                            >
+                            SKF CNC Seal Jet
+                          </span>
+                        </div>
+                        <div class="font-label-code text-primary font-semibold">
+                          Central Técnica: parseals@parseals.com.br
+                        </div>
+                      </div>
+                      <div
+                        class="flex flex-wrap items-center justify-between gap-1 text-[8px] text-outline pt-0.5"
+                      >
+                        <span
+                          >Parseals Vedações: Tel (41) 3598-9400 | WhatsApp (41)
+                          99109-9535 | parseals@parseals.com.br</span
+                        >
+                        <span class="font-label-code">PAR-PRD-2026.REV1</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="p-2.5 bg-surface-slate border-t border-border-subtle flex items-center justify-between text-xs"
+                >
+                  <span
+                    class="text-on-surface-variant flex items-center gap-1 font-label-code text-[11px]"
+                  >
+                    <span
+                      class="material-symbols-outlined text-emerald-glow text-[15px]"
+                      >check_circle</span
+                    >Tolerâncias DIN/ISO garantidas
+                  </span>
+                  <a
+                    class="text-primary font-bold hover:underline flex items-center gap-1 text-[11px]"
+                    href="https://wa.me/5541991099535"
+                    target="_blank"
+                  >
+                    <span>Dúvida Técnica?</span>
+                    <span class="material-symbols-outlined text-[13px]"
+                      >open_in_new</span
+                    >
+                  </a>
+                </div>
+              </div>
+
+              <div
+                class="bg-industrial-dark text-white p-5 rounded-xl space-y-3 shadow-sm"
+              >
+                <div class="flex items-center justify-between">
+                  <span
+                    class="font-label-caps text-label-caps text-emerald-glow uppercase tracking-wider font-bold"
+                    >Plantão de Técnico</span
+                  >
+                  <span
+                    class="w-2 h-2 rounded-full bg-emerald-glow animate-pulse"
+                  ></span>
+                </div>
+                <p class="font-body-sm text-sm text-white/80">
+                  Precisa de consultoria para dimensionamento de alojamento ou
+                  usinagem imediata?
+                </p>
+                <div class="space-y-2 pt-1 font-label-code text-sm">
+                  <a
+                    class="flex items-center justify-between p-2 rounded bg-white/5 hover:bg-white/10 transition-colors text-white"
+                    href="tel:4135989400"
+                  >
+                    <div class="flex items-center gap-2">
+                      <span
+                        class="material-symbols-outlined text-emerald-glow text-[18px]"
+                        >call</span
+                      >
+                      <span>(41) 3598-9400</span>
+                    </div>
+                    <span class="text-white/60 text-xs">Telefone</span>
+                  </a>
+                  <a
+                    class="flex items-center justify-between p-2 rounded bg-secondary hover:bg-secondary-fixed-dim transition-colors text-white font-semibold"
+                    href="https://wa.me/5541991099535"
+                    target="_blank"
+                  >
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-[18px]"
+                        >chat</span
+                      >
+                      <span>(41) 99109-9535</span>
+                    </div>
+                    <span class="text-xs">WhatsApp Direto</span>
+                  </a>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="w-full bg-industrial-dark text-white border-t border-white/10 shrink-0"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12"
+        >
+          <div class="space-y-4">
+            <div class="flex items-center gap-2.5">
+              <img
+                alt="Parseals Vedações"
+                class="h-8 w-auto object-contain brightness-0 invert"
+                src="img/logo_parseals.png"
+              />
+              <div class="flex flex-col">
+                <span
+                  class="font-headline-sm text-base text-white font-bold leading-tight"
+                  >PARSEALS</span
+                >
+                <span
+                  class="font-label-caps text-xs text-emerald-glow tracking-widest"
+                  >VEDAÇÕES &amp; GAXETAS</span
+                >
+              </div>
+            </div>
+            <p class="font-body-sm text-sm text-white/70 leading-relaxed">
+              Engenharia de precisão em vedações industriais, gaxetas e
+              componentes usinados sob medida. Parceiro técnico para indústrias
+              pesadas, hidráulica e pneumática de alta performance.
+            </p>
+          </div>
+          <div class="space-y-3">
+            <h4
+              class="font-headline-sm text-base text-white border-b border-white/10 pb-2 flex items-center gap-2"
+            >
+              <span
+                class="material-symbols-outlined text-emerald-glow text-[18px]"
+                >route</span
+              >Navegação Principal
+            </h4>
+            <ul class="space-y-2 font-body-sm text-sm text-white/75">
+              <li>
+                <a
+                  class="hover:text-emerald-glow transition-colors"
+                  href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  class="hover:text-emerald-glow transition-colors"
+                  href="sobre.html"
+                  >Sobre a Parseals</a
+                >
+              </li>
+              <li>
+                <a
+                  class="hover:text-emerald-glow transition-colors"
+                  href="produtos.html"
+                  >Produtos</a
+                >
+              </li>
+              <li>
+                <a
+                  class="hover:text-emerald-glow transition-colors"
+                  href="usinagem.html"
+                  >Usinagem sob Medida</a
+                >
+              </li>
+              <li>
+                <a
+                  class="hover:text-emerald-glow transition-colors"
+                  href="orcamento.html"
+                  >Solicitação de Orçamento</a
+                >
+              </li>
+              <li>
+                <a
+                  class="hover:text-emerald-glow transition-colors"
+                  href="contato.html"
+                  >Contato</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="space-y-3">
+            <h4
+              class="font-headline-sm text-base text-white border-b border-white/10 pb-2 flex items-center gap-2"
+            >
+              <span
+                class="material-symbols-outlined text-emerald-glow text-[18px]"
+                >precision_manufacturing</span
+              >Linha Técnica
+            </h4>
+            <ul class="space-y-2 font-body-sm text-sm text-white/75">
+              <li>
+                <a
+                  class="hover:text-emerald-glow transition-colors"
+                  href="produtos.html"
+                  >Gaxetas Hidráulicas &amp; Pneumáticas</a
+                >
+              </li>
+              <li>
+                <a
+                  class="hover:text-emerald-glow transition-colors"
+                  href="produtos.html"
+                  >Retentores e Raspadores Industriais</a
+                >
+              </li>
+              <li>
+                <a
+                  class="hover:text-emerald-glow transition-colors"
+                  href="produtos.html"
+                  >Anéis O-Ring &amp; Back-up Rings</a
+                >
+              </li>
+              <li>
+                <a
+                  class="hover:text-emerald-glow transition-colors"
+                  href="usinagem.html"
+                  >Usinagem CNC Especial (Seal Jet)</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="space-y-3">
+            <h4
+              class="font-headline-sm text-base text-white border-b border-white/10 pb-2 flex items-center gap-2"
+            >
+              <span
+                class="material-symbols-outlined text-emerald-glow text-[18px]"
+                >pin_drop</span
+              >Unidade Industrial
+            </h4>
+            <address
+              class="not-italic font-body-sm text-sm text-white/75 space-y-2"
+            >
+              <p class="text-white font-medium">
+                Parseals Vedações Industriais Ltda.
+              </p>
+              <p>Rua Brazílio de Araújo, 960 - Neoville</p>
+              <p>Curitiba - PR | CEP 81312-050</p>
+              <p class="pt-1 flex items-center gap-2 text-white">
+                <span
+                  class="material-symbols-outlined text-emerald-glow text-[16px]"
+                  >phone_in_talk</span
+                >(41) 3598-9400
+              </p>
+            </address>
+          </div>
+        </div>
+        <div
+          class="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/60"
+        >
+          <p>
+            © 2026 Parseals Vedações Industriais. Todos os direitos reservados.
+            Desenvolvido por Trizottech tecnologia LTDA
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <div
+      aria-modal="true"
+      class="fixed inset-0 z-[100] hidden bg-slate-950/85 backdrop-blur-md flex flex-col items-center justify-between p-2 sm:p-4"
+      id="pdf-modal-viewer"
+      role="dialog"
+    >
+      <div
+        class="w-full max-w-4xl bg-industrial-dark/95 border border-white/15 text-white rounded-lg px-4 py-2.5 flex items-center justify-between shadow-xl shrink-0"
+      >
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-emerald-glow text-[22px]"
+            >picture_as_pdf</span
+          >
+          <div class="flex flex-col">
+            <span
+              class="font-label-code text-xs font-bold text-white uppercase tracking-wider"
+              >Espelho Proforma Técnico - CQ-2026-00001</span
+            >
+            <span class="text-[10px] text-white/60 font-body-sm"
+              >Formato A4 Normatizado • ISO 9001:2015 / SKF Seal Jet</span
+            >
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <div
+            class="hidden sm:flex items-center gap-1 bg-white/10 rounded px-1.5 py-0.5 text-xs font-label-code text-white/80 mr-2"
+          >
+            <button
+              class="hover:text-white p-1"
+              onclick="adjustModalZoom(-0.1)"
+              title="Diminuir Zoom"
+              type="button"
+            >
+              <span class="material-symbols-outlined text-[16px]">remove</span>
+            </button>
+            <span id="zoom-percentage-text">100%</span>
+            <button
+              class="hover:text-white p-1"
+              onclick="adjustModalZoom(0.1)"
+              title="Aumentar Zoom"
+              type="button"
+            >
+              <span class="material-symbols-outlined text-[16px]">add</span>
+            </button>
+          </div>
+          <button
+            class="px-3 py-1.5 rounded bg-secondary hover:bg-secondary-fixed-dim text-white font-headline-sm text-xs font-semibold flex items-center gap-1.5 shadow-sm transition-all"
+            onclick="printProformaPDF()"
+            type="button"
+          >
+            <span class="material-symbols-outlined text-[16px]">print</span
+            ><span>Imprimir / Salvar PDF</span>
+          </button>
+          <button
+            class="p-1.5 rounded bg-white/10 hover:bg-white/20 text-white transition-colors"
+            onclick="closePdfModalViewer()"
+            title="Fechar Visualização"
+            type="button"
+          >
+            <span class="material-symbols-outlined text-[20px]">close</span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="w-full flex-1 overflow-auto flex justify-center items-start py-6 px-2"
+      >
+        <div
+          class="transition-transform duration-200 origin-top"
+          id="modal-a4-wrapper"
+        >
+          <div
+            class="w-[210mm] max-w-full bg-white text-on-surface rounded shadow-2xl p-8 border border-border-precision space-y-4 text-xs font-body-sm"
+            id="modal-proforma-cloned-sheet"
+          ></div>
+        </div>
+      </div>
+      <div class="text-[11px] text-white/60 font-label-code text-center py-1">
+        Pressione ESC ou clique em Fechar para retornar ao portal de cotações
+        Parseals.
+      </div>
+    </div>
+
+    <script>
+      let currentUnit = "mm";
+      let editingItemId = null;
+      let currentZoom = 1.0;
+      let selectedProfileName = "Perfil S01-R";
+      let selectedProfileDesc = "Gaxeta de Haste Asimétrica";
+
+      let quoteItems = [];
+
+      function setUnit(unit) {
+        currentUnit = unit;
+        const btnMm = document.getElementById("btn-unit-mm");
+        const btnIn = document.getElementById("btn-unit-in");
+        const labels = document.querySelectorAll(".unit-text");
+
+        if (unit === "mm") {
+          btnMm.className =
+            "px-2.5 py-0.5 rounded bg-white text-primary font-bold shadow-sm";
+          btnIn.className =
+            "px-2.5 py-0.5 rounded text-on-surface-variant font-medium";
+          labels.forEach((l) => (l.textContent = "(mm)"));
+        } else {
+          btnIn.className =
+            "px-2.5 py-0.5 rounded bg-white text-primary font-bold shadow-sm";
+          btnMm.className =
+            "px-2.5 py-0.5 rounded text-on-surface-variant font-medium";
+          labels.forEach((l) => (l.textContent = "(pol)"));
+        }
+      }
+
+      function filterProfiles(category, btn) {
+        document.querySelectorAll(".filter-btn").forEach((b) => {
+          b.classList.remove("active", "bg-primary-container", "text-white");
+          b.classList.add("text-on-surface-variant");
+        });
+        btn.classList.add("active", "bg-primary-container", "text-white");
+        btn.classList.remove("text-on-surface-variant");
+
+        const cards = document.querySelectorAll("#profiles-grid .profile-card");
+        cards.forEach((card) => {
+          const cat = card.getAttribute("data-category");
+          if (category === "all" || cat === category || cat === "all") {
+            card.classList.remove("hidden");
+          } else {
+            card.classList.add("hidden");
+          }
+        });
+      }
+
+      function selectProfile(cardEl, name, desc) {
+        document.querySelectorAll(".profile-card").forEach((c) => {
+          c.classList.remove("active-profile");
+          const badge = c.querySelector(".selected-badge");
+          if (badge) {
+            badge.classList.add("hidden");
+            badge.classList.remove("inline-flex");
+          }
+        });
+
+        cardEl.classList.add("active-profile");
+        const curBadge = cardEl.querySelector(".selected-badge");
+        if (curBadge) {
+          curBadge.classList.remove("hidden");
+          curBadge.classList.add("inline-flex");
+        }
+
+        selectedProfileName = name;
+        selectedProfileDesc = desc;
+        document.getElementById("item-profile-input").value =
+          `${name} (${desc})`;
+      }
+
+      function renderItems() {
+        const container = document.getElementById("configured-items-list");
+        const pdfTbody = document.getElementById("pdf-items-tbody");
+        const countBadge = document.getElementById("items-badge-count");
+        const btnCount = document.getElementById("btn-count-items");
+        const pdfCount = document.getElementById("pdf-table-items-count");
+
+        const total = quoteItems.length;
+        if (countBadge)
+          countBadge.textContent = `${total} ${total === 1 ? "item configurado" : "itens configurados"}`;
+        if (btnCount)
+          btnCount.textContent = `${total} ${total === 1 ? "Item" : "Itens"}`;
+        if (pdfCount)
+          pdfCount.textContent = `Total: ${total} ${total === 1 ? "item" : "itens"}`;
+
+        if (total === 0) {
+          if (container) {
+            container.innerHTML = `
+              <div class="p-6 text-center text-on-surface-variant border border-dashed border-border-subtle rounded-lg">
+                Nenhum item adicionado ainda. Configure o formulário abaixo para incluir sua primeira vedação.
+              </div>`;
+          }
+          if (pdfTbody) {
+            pdfTbody.innerHTML = `
+              <tr>
+                <td colspan="4" class="py-4 text-center text-on-surface-variant font-label-code">
+                  Nenhum item na proforma.
+                </td>
+              </tr>`;
+          }
+          syncModalIfOpen();
+          return;
+        }
+
+        let htmlCards = "";
+        let htmlPdf = "";
+
+        quoteItems.forEach((item, index) => {
+          const itemNum = String(index + 1).padStart(2, "0");
+          htmlCards += `
+            <div class="p-3.5 rounded-lg border border-border-subtle bg-surface-slate flex flex-col md:flex-row md:items-center justify-between gap-3 hover:border-border-precision transition-all group" data-item-id="${item.id}">
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 rounded-md bg-white border border-border-subtle flex items-center justify-center shrink-0 text-primary-container font-headline-sm font-bold text-sm">
+                  #${itemNum}
+                </div>
+                <div>
+                  <div class="flex flex-wrap items-center gap-2">
+                    <span class="font-headline-sm text-body-md font-bold text-on-surface">${item.profile} - ${item.description}</span>
+                    <span class="px-2 py-0.5 rounded text-[11px] font-label-code bg-surface-container text-primary font-semibold">${item.badge || "Técnico"}</span>
+                  </div>
+                  <div class="text-body-sm text-on-surface-variant font-label-code flex flex-wrap gap-x-3 gap-y-0.5 mt-0.5">
+                    <span><strong>Alojamento:</strong> Ø ${item.din} × ${item.dout} × ${item.h} ${item.unit}</span>
+                    <span><strong>Material:</strong> ${item.material}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center justify-between md:justify-end gap-3 pt-2 md:pt-0 border-t md:border-t-0 border-border-subtle">
+                <div class="text-right">
+                  <span class="font-label-caps text-[11px] text-on-surface-variant block uppercase">Qtd</span>
+                  <span class="font-headline-sm text-body-md font-bold text-primary">${String(item.quantity).padStart(2, "0")} pçs</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <button type="button" onclick="editItem(${item.id})" class="p-1.5 rounded-md hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Editar item">
+                    <span class="material-symbols-outlined text-[18px]">edit</span>
+                  </button>
+                  <button type="button" onclick="removeItem(${item.id})" class="p-1.5 rounded-md hover:bg-error-container text-on-surface-variant hover:text-urgent-red transition-colors" title="Excluir item">
+                    <span class="material-symbols-outlined text-[18px]">delete</span>
+                  </button>
+                </div>
+              </div>
+            </div>`;
+
+          htmlPdf += `
+            <tr>
+              <td class="py-2 px-2 font-label-code text-on-surface-variant">#${itemNum}</td>
+              <td class="py-2 px-2">
+                <strong class="text-on-surface block font-medium">${item.profile}</strong>
+                <span class="text-[10px] text-on-surface-variant">${item.material}</span>
+              </td>
+              <td class="py-2 px-2 font-label-code text-primary">${item.din}×${item.dout}×${item.h} ${item.unit}</td>
+              <td class="py-2 px-2 font-bold text-right">${item.quantity} un</td>
+            </tr>`;
+        });
+
+        if (container) container.innerHTML = htmlCards;
+        if (pdfTbody) pdfTbody.innerHTML = htmlPdf;
+        syncModalIfOpen();
+      }
+
+      function syncModalIfOpen() {
+        const modal = document.getElementById("pdf-modal-viewer");
+        if (modal && !modal.classList.contains("hidden")) {
+          const clonedContainer = document.getElementById(
+            "modal-proforma-cloned-sheet",
+          );
+          const originalSheet = document.getElementById("proforma-a4-sheet");
+          if (clonedContainer && originalSheet) {
+            clonedContainer.innerHTML = originalSheet.innerHTML;
+          }
+        }
+      }
+
+      function handleAddItem() {
+        const din = document.getElementById("item-din").value || "--";
+        const dout = document.getElementById("item-dout").value || "--";
+        const h = document.getElementById("item-h").value || "--";
+        const mat = document.getElementById("item-mat").value;
+        const qty =
+          parseInt(document.getElementById("item-qty").value, 10) || 1;
+
+        if (editingItemId) {
+          const target = quoteItems.find((i) => i.id === editingItemId);
+          if (target) {
+            target.profile = selectedProfileName;
+            target.description = selectedProfileDesc;
+            target.din = din;
+            target.dout = dout;
+            target.h = h;
+            target.unit = currentUnit;
+            target.material = mat;
+            target.quantity = qty;
+          }
+          editingItemId = null;
+          document.getElementById("btn-save-item").innerHTML = `
+            <span class="material-symbols-outlined text-[18px]">playlist_add</span>
+            <span>Salvar &amp; Incluir na Cotação</span>`;
+          document.getElementById("item-form-title").textContent =
+            "Configurar Nova Vedação";
+        } else {
+          const newId = Date.now();
+          quoteItems.push({
+            id: newId,
+            profile: selectedProfileName,
+            description: selectedProfileDesc,
+            din: din,
+            dout: dout,
+            h: h,
+            unit: currentUnit,
+            material: mat,
+            quantity: qty,
+            badge: selectedProfileName.includes("S01")
+              ? "SKF Seal Jet"
+              : selectedProfileName.includes("R01")
+                ? "DIN 3760"
+                : "Usinagem CNC",
+          });
+        }
+
+        renderItems();
+        updateProformaDraft();
+        startNewItem();
+      }
+
+      function removeItem(id) {
+        quoteItems = quoteItems.filter((i) => i.id !== id);
+        if (editingItemId === id) {
+          startNewItem();
+        }
+        renderItems();
+        updateProformaDraft();
+      }
+
+      function editItem(id) {
+        const item = quoteItems.find((i) => i.id === id);
+        if (!item) return;
+
+        editingItemId = id;
+        document.getElementById("item-din").value = item.din;
+        document.getElementById("item-dout").value = item.dout;
+        document.getElementById("item-h").value = item.h;
+        document.getElementById("item-mat").value = item.material;
+        document.getElementById("item-qty").value = item.quantity;
+        setUnit(item.unit);
+
+        document.getElementById("btn-save-item").innerHTML = `
+          <span class="material-symbols-outlined text-[18px]">check</span>
+          <span>Salvar Alterações no Item #${String(quoteItems.findIndex((i) => i.id === id) + 1).padStart(2, "0")}</span>`;
+        document.getElementById("item-form-title").textContent =
+          `Editar Vedação (Item #${String(quoteItems.findIndex((i) => i.id === id) + 1).padStart(2, "0")})`;
+
+        document
+          .getElementById("item-config-card")
+          .scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+
+      function startNewItem() {
+        editingItemId = null;
+        document.getElementById("item-din").value = "";
+        document.getElementById("item-dout").value = "";
+        document.getElementById("item-h").value = "";
+        document.getElementById("item-qty").value = "5";
+        document.getElementById("btn-save-item").innerHTML = `
+          <span class="material-symbols-outlined text-[18px]">playlist_add</span>
+          <span>Salvar &amp; Incluir na Cotação</span>`;
+        document.getElementById("item-form-title").textContent =
+          "Configurar Nova Vedação";
+        document.getElementById("current-item-number").textContent = String(
+          quoteItems.length + 1,
+        ).padStart(2, "0");
+      }
+
+      function updateProformaDraft() {
+        const comp =
+          document.getElementById("cli-empresa").value || "Não informada";
+        const name =
+          document.getElementById("cli-nome").value || "Não informado";
+        const email =
+          document.getElementById("cli-email").value || "Não informado";
+        const tel = document.getElementById("cli-tel")
+          ? document.getElementById("cli-tel").value || "Não informado"
+          : "Não informado";
+
+        const p = document.getElementById("geral-pressao").value || "--";
+        const t = document.getElementById("geral-temp").value || "--";
+        const f = document.getElementById("geral-fluido").value || "--";
+
+        const urgRadio = document.querySelector(
+          'input[name="order_urgency"]:checked',
+        );
+        const urgency = urgRadio ? urgRadio.value : "Padrão";
+
+        if (document.getElementById("pdf-preview-company"))
+          document.getElementById("pdf-preview-company").textContent = comp;
+        if (document.getElementById("pdf-preview-contact"))
+          document.getElementById("pdf-preview-contact").textContent = name;
+        if (document.getElementById("pdf-preview-email"))
+          document.getElementById("pdf-preview-email").textContent = email;
+        if (document.getElementById("pdf-preview-phone"))
+          document.getElementById("pdf-preview-phone").textContent = tel;
+        if (document.getElementById("pdf-preview-urgency"))
+          document.getElementById("pdf-preview-urgency").textContent = urgency;
+
+        if (document.getElementById("pdf-param-pressao"))
+          document.getElementById("pdf-param-pressao").textContent = p;
+        if (document.getElementById("pdf-param-temp"))
+          document.getElementById("pdf-param-temp").textContent = t;
+        if (document.getElementById("pdf-param-fluido"))
+          document.getElementById("pdf-param-fluido").textContent = f;
+
+        syncModalIfOpen();
+      }
+
+      function validateClientFields() {
+        const comp = document.getElementById("cli-empresa");
+        const name = document.getElementById("cli-nome");
+        const email = document.getElementById("cli-email");
+        const tel = document.getElementById("cli-tel");
+
+        if (
+          !comp.value.trim() ||
+          !name.value.trim() ||
+          !email.value.trim() ||
+          !tel.value.trim()
+        ) {
+          alert(
+            "Por favor, preencha os dados cadastrais da sua empresa (Razão Social, Responsável, E-mail e Telefone) no final da página antes de enviar a cotação.",
+          );
+          comp.scrollIntoView({ behavior: "smooth", block: "center" });
+          return false;
+        }
+        return true;
+      }
+
+      function handleProformaFile(input) {
+        const display = document.getElementById("attached-files-text");
+        if (input.files && input.files.length > 0) {
+          const names = Array.from(input.files)
+            .map((f) => f.name)
+            .join(", ");
+          display.textContent = `Arquivos anexados: ${names}`;
+          display.classList.remove("hidden");
+        } else {
+          display.classList.add("hidden");
+        }
+      }
+
+      function printProformaPDF() {
+        const proformaElement = document.getElementById("proforma-a4-sheet");
+        if (!proformaElement) return;
+
+        const printFrame = document.createElement("iframe");
+        printFrame.style.position = "fixed";
+        printFrame.style.right = "0";
+        printFrame.style.bottom = "0";
+        printFrame.style.width = "0";
+        printFrame.style.height = "0";
+        printFrame.style.border = "0";
+        printFrame.style.visibility = "hidden";
+        document.body.appendChild(printFrame);
+
+        const doc = printFrame.contentWindow.document;
+        doc.open();
+        doc.write(`
+          <!DOCTYPE html>
+          <html lang="pt-BR">
+          <head>
+            <meta charset="utf-8">
+            <title>Parseals - Espelho de Proforma RFQ-2024-8842</title>
+            <script src="https://cdn.tailwindcss.com"><\/script>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+            <style>
+              @page { size: A4 portrait; margin: 8mm; }
+              * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; box-sizing: border-box; }
+              body { margin: 0; padding: 0; background: #ffffff !important; color: #111827 !important; font-family: 'Inter', sans-serif; }
+              .a4-container { width: 100%; max-width: 190mm; margin: 0 auto; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 18px; }
+              table { border-collapse: collapse; width: 100%; }
+              th, td { border-bottom: 1px solid #e2e8f0; }
+            </style>
+          </head>
+          <body class="p-4">
+            <div class="a4-container">${proformaElement.innerHTML}</div>
+            <script>
+              window.onload = function() {
+                setTimeout(function() {
+                  window.focus();
+                  window.print();
+                  setTimeout(function() {
+                    if (window.frameElement && window.frameElement.parentNode) {
+                      window.frameElement.parentNode.removeChild(window.frameElement);
+                    }
+                  }, 1000);
+                }, 400);
+              };
+            <\/script>
+          </body>
+          </html>`);
+        doc.close();
+      }
+
+      function openPdfModalViewer() {
+        const modal = document.getElementById("pdf-modal-viewer");
+        const clonedContainer = document.getElementById(
+          "modal-proforma-cloned-sheet",
+        );
+        const originalSheet = document.getElementById("proforma-a4-sheet");
+
+        clonedContainer.innerHTML = originalSheet.innerHTML;
+        currentZoom = 1.0;
+        document.getElementById("modal-a4-wrapper").style.transform =
+          `scale(${currentZoom})`;
+        document.getElementById("zoom-percentage-text").textContent = "100%";
+
+        modal.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closePdfModalViewer() {
+        const modal = document.getElementById("pdf-modal-viewer");
+        modal.classList.add("hidden");
+        document.body.style.overflow = "";
+      }
+
+      function adjustModalZoom(delta) {
+        currentZoom = Math.min(Math.max(currentZoom + delta, 0.7), 1.5);
+        document.getElementById("modal-a4-wrapper").style.transform =
+          `scale(${currentZoom.toFixed(1)})`;
+        document.getElementById("zoom-percentage-text").textContent =
+          `${Math.round(currentZoom * 100)}%`;
+      }
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closePdfModalViewer();
+      });
+
+      function submitFullRfq() {
+        if (quoteItems.length === 0) {
+          alert("Por favor, adicione pelo menos um item à sua cotação.");
+          return;
+        }
+
+        if (!validateClientFields()) return;
+
+        const comp = document.getElementById("cli-empresa").value;
+        const name = document.getElementById("cli-nome").value;
+        const email = document.getElementById("cli-email").value;
+        const tel = document.getElementById("cli-tel").value;
+        const pressao = document.getElementById("geral-pressao").value || "--";
+        const temp = document.getElementById("geral-temp").value || "--";
+        const fluido = document.getElementById("geral-fluido").value || "--";
+        const urgRadio = document.querySelector(
+          'input[name="order_urgency"]:checked',
+        );
+        const urgency = urgRadio ? urgRadio.value : "Padrão";
+
+        document.getElementById("pdf-status").textContent =
+          "Cotação Realizada • Encaminhar a equipe técnica";
+        document.getElementById("pdf-status-badge").className =
+          "inline-flex items-center gap-1 text-[9px] font-bold text-white bg-secondary px-1.5 py-0.2 rounded";
+
+        let itemsText = "";
+        quoteItems.forEach((it, idx) => {
+          itemsText += `Item #${String(idx + 1).padStart(2, "0")}: ${it.profile} (${it.description}) | Dimensões: ${it.din} x ${it.dout} x ${it.h} ${it.unit} | Material: ${it.material} | Qtd: ${it.quantity} pçs\n`;
+        });
+
+        const mailSubject = encodeURIComponent(
+          `Solicitação de Cotação Técnica - Parseals [CQ-2026-00001] - ${comp}`,
+        );
+        const mailBody = encodeURIComponent(
+          `SOLICITAÇÃO DE COTAÇÃO TÉCNICA - PARSEALS VEDAÇÕES\n` +
+            `Protocolo: CQ-2026-00001\n` +
+            `Data: ${new Date().toLocaleDateString("pt-BR")}\n\n` +
+            `----------------------------------------\n` +
+            `DADOS DO CLIENTE / SOLICITANTE:\n` +
+            `Razão Social / CNPJ: ${comp}\n` +
+            `Responsável: ${name}\n` +
+            `E-mail: ${email}\n` +
+            `WhatsApp / Telefone: ${tel}\n` +
+            `Regime de Prioridade: ${urgency}\n\n` +
+            `----------------------------------------\n` +
+            `PARÂMETROS OPERACIONAIS:\n` +
+            `Pressão de Trabalho: ${pressao}\n` +
+            `Temperatura: ${temp}\n` +
+            `Fluido em Contato: ${fluido}\n\n` +
+            `----------------------------------------\n` +
+            `ITENS CONFIGURADOS (${quoteItems.length}):\n` +
+            `${itemsText}\n` +
+            `----------------------------------------\n` +
+            `Atendimento Parseals Vedações:\n` +
+            `Telefone: (41) 3598-9400 | WhatsApp: (41) 99109-9535\n` +
+            `E-mail Oficial: parseals@parseals.com.br\n` +
+            `Rua Brazílio de Araújo, 960 - Neoville, Curitiba/PR`,
+        );
+
+        const mailtoLink = `mailto:trizotte.alan@gmail.com?cc=${encodeURIComponent(email)}&subject=${mailSubject}&body=${mailBody}`;
+
+        const emailWindow = window.open(mailtoLink, "_blank");
+        if (
+          !emailWindow ||
+          emailWindow.closed ||
+          typeof emailWindow.closed === "undefined"
+        ) {
+          const mailAnchor = document.createElement("a");
+          mailAnchor.href = mailtoLink;
+          mailAnchor.style.display = "none";
+          document.body.appendChild(mailAnchor);
+          mailAnchor.click();
+          document.body.removeChild(mailAnchor);
+        }
+
+        document.getElementById("item-form").classList.add("hidden");
+        document.getElementById("rfq-success-card").classList.remove("hidden");
+        document
+          .getElementById("rfq-success-card")
+          .scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+
+      function submitViaWhatsApp() {
+        if (quoteItems.length === 0) {
+          alert("Por favor, adicione pelo menos um item à sua cotação.");
+          return;
+        }
+
+        if (!validateClientFields()) return;
+
+        const comp = document.getElementById("cli-empresa").value;
+        const name = document.getElementById("cli-nome").value;
+        const email = document.getElementById("cli-email").value;
+        const tel = document.getElementById("cli-tel").value;
+        const pressao = document.getElementById("geral-pressao").value || "--";
+        const temp = document.getElementById("geral-temp").value || "--";
+        const fluido = document.getElementById("geral-fluido").value || "--";
+        const urgRadio = document.querySelector(
+          'input[name="order_urgency"]:checked',
+        );
+        const urgency = urgRadio ? urgRadio.value : "Padrão";
+
+        let itemsText = "";
+        quoteItems.forEach((it, idx) => {
+          itemsText += `\n• Item #${String(idx + 1).padStart(2, "0")}: ${it.profile} (${it.description}) - Ø ${it.din} x ${it.dout} x ${it.h} ${it.unit} | Mat: ${it.material} | Qtd: ${it.quantity} pçs`;
+        });
+
+        const waText = encodeURIComponent(
+          `*SOLICITAÇÃO DE COTAÇÃO TÉCNICA - PARSEALS VEDAÇÕES*\n` +
+            `*Protocolo:* #CQ-2026-00001\n` +
+            `*Data:* ${new Date().toLocaleDateString("pt-BR")}\n\n` +
+            `*Empresa / CNPJ:* ${comp}\n` +
+            `*Solicitante:* ${name}\n` +
+            `*E-mail:* ${email}\n` +
+            `*Telefone:* ${tel}\n` +
+            `*Urgência:* ${urgency}\n\n` +
+            `*CONDIÇÕES OPERACIONAIS:*\n` +
+            `- Pressão: ${pressao}\n` +
+            `- Temperatura: ${temp}\n` +
+            `- Fluido: ${fluido}\n\n` +
+            `*ITENS DA COTAÇÃO:*${itemsText}\n\n` +
+            `Favor encaminhar o espelho proforma`,
+        );
+
+        window.open(`https://wa.me/5541991099535?text=${waText}`, "_blank");
+
+        if (document.getElementById("pdf-status")) {
+          document.getElementById("pdf-status").textContent =
+            "Cotação Registrada • Enviada via WhatsApp";
+          document.getElementById("pdf-status-badge").className =
+            "inline-flex items-center gap-1 text-[9px] font-bold text-white bg-secondary px-1.5 py-0.2 rounded";
+        }
+
+        document.getElementById("item-form").classList.add("hidden");
+        document.getElementById("rfq-success-card").classList.remove("hidden");
+        document
+          .getElementById("rfq-success-card")
+          .scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+
+      function resetQuoteForm() {
+        document.getElementById("rfq-success-card").classList.add("hidden");
+        document.getElementById("item-form").classList.remove("hidden");
+        startNewItem();
+        document
+          .getElementById("item-config-card")
+          .scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        renderItems();
+        updateProformaDraft();
+        const today = new Date();
+        const d = String(today.getDate()).padStart(2, "0");
+        const m = String(today.getMonth() + 1).padStart(2, "0");
+        const y = today.getFullYear();
+        if (document.getElementById("proforma-date")) {
+          document.getElementById("proforma-date").textContent =
+            `Data: ${d}/${m}/${y}`;
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1958 @@
+<!doctype html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <title>Parseals | Vedações e Gaxetas Industriais</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#80d5cb",
+              "primary-fixed": "#b8efcd",
+              "tertiary-container": "#004a44",
+              "surface-container-high": "#dee8ff",
+              "on-surface": "#111c2d",
+              "surface-container-highest": "#d8e3fb",
+              surface: "#f9f9ff",
+              outline: "#717972",
+              "on-primary-container": "#84b99a",
+              "surface-dim": "#cfdaf2",
+              "on-background": "#111c2d",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed": "#00201d",
+              "on-primary-fixed-variant": "#1c5037",
+              "on-error-container": "#93000a",
+              "on-tertiary-container": "#66bcb2",
+              tertiary: "#00322e",
+              "on-tertiary": "#ffffff",
+              "outline-variant": "#c0c9c1",
+              "surface-container-low": "#f0f3ff",
+              "surface-tint": "#35684e",
+              "on-secondary-fixed": "#002109",
+              "primary-container": "#154a32",
+              "on-secondary-fixed-variant": "#005320",
+              "border-precision": "#cbd5e1",
+              "inverse-primary": "#9dd2b2",
+              "surface-slate": "#f8fafc",
+              "on-tertiary-fixed-variant": "#00504a",
+              "secondary-container": "#7cf994",
+              "inverse-on-surface": "#ecf1ff",
+              "industrial-dark": "#0a1c14",
+              background: "#f9f9ff",
+              "urgent-red": "#dc2626",
+              "secondary-fixed-dim": "#62df7d",
+              secondary: "#006e2d",
+              "border-subtle": "#e2e8f0",
+              "surface-bright": "#f9f9ff",
+              "on-primary-fixed": "#002112",
+              "tertiary-fixed": "#9cf2e8",
+              "inverse-surface": "#263143",
+              "error-container": "#ffdad6",
+              error: "#ba1a1a",
+              "on-secondary-container": "#007230",
+              "safety-amber": "#d97706",
+              "surface-variant": "#d8e3fb",
+              "on-secondary": "#ffffff",
+              primary: "#00321e",
+              "surface-container": "#e7eeff",
+              "surface-card": "#ffffff",
+              "secondary-fixed": "#7ffc97",
+              "on-surface-variant": "#414943",
+              "emerald-glow": "#10b981",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed-dim": "#9dd2b2",
+              "on-error": "#ffffff",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              "gutter-mobile": "1rem",
+              margin: "2rem",
+              "margin-mobile": "1rem",
+              "space-xl": "2.5rem",
+              "space-xs": "0.25rem",
+              "space-3xl": "6rem",
+              "space-lg": "1.5rem",
+              "space-2xl": "4rem",
+              "space-sm": "0.5rem",
+              "space-md": "1rem",
+              gutter: "1.5rem",
+            },
+            fontFamily: {
+              "headline-md": ["Space Grotesk"],
+              "body-lg": ["Inter"],
+              "label-caps": ["Space Grotesk"],
+              "headline-lg": ["Space Grotesk"],
+              "display-hero-mobile": ["Space Grotesk"],
+              "body-md": ["Inter"],
+              "headline-sm": ["Space Grotesk"],
+              "display-hero": ["Space Grotesk"],
+              "headline-xl-mobile": ["Space Grotesk"],
+              "body-sm": ["Inter"],
+              "headline-xl": ["Space Grotesk"],
+              "label-code": ["Space Grotesk"],
+            },
+            fontSize: {
+              "headline-md": [
+                "1.375rem",
+                {
+                  lineHeight: "1.35",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-lg": [
+                "1.125rem",
+                {
+                  lineHeight: "1.6",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "400",
+                },
+              ],
+              "label-caps": [
+                "0.75rem",
+                {
+                  lineHeight: "1rem",
+                  letterSpacing: "0.08em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-lg": [
+                "1.75rem",
+                {
+                  lineHeight: "1.3",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "600",
+                },
+              ],
+              "display-hero-mobile": [
+                "2.25rem",
+                {
+                  lineHeight: "1.15",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-md": [
+                "0.9375rem",
+                {
+                  lineHeight: "1.55",
+                  letterSpacing: "-0.005em",
+                  fontWeight: "400",
+                },
+              ],
+              "headline-sm": [
+                "1.125rem",
+                { lineHeight: "1.4", letterSpacing: "0em", fontWeight: "600" },
+              ],
+              "display-hero": [
+                "3.5rem",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.03em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-xl-mobile": [
+                "1.875rem",
+                {
+                  lineHeight: "1.25",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-sm": [
+                "0.8125rem",
+                { lineHeight: "1.5", letterSpacing: "0em", fontWeight: "400" },
+              ],
+              "headline-xl": [
+                "2.5rem",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.025em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-code": [
+                "0.8125rem",
+                {
+                  lineHeight: "1.2rem",
+                  letterSpacing: "0.02em",
+                  fontWeight: "500",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-surface font-body-md text-on-surface antialiased">
+    <div
+      class="w-full bg-industrial-dark text-on-primary border-b border-white/10"
+    ></div>
+    <header
+      class="sticky top-0 w-full z-50 bg-surface-card/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.06)] border-b border-border-subtle"
+    >
+      <div
+        class="h-20 max-w-7xl mx-auto px-margin flex items-center justify-between gap-space-md"
+      >
+        <div class="flex items-center gap-space-md">
+          <a
+            class="flex items-center gap-space-sm focus:outline-none"
+            data-path="inicio"
+            href="index.html"
+          >
+            <img
+              alt="Parseals Vedações &amp; Gaxetas"
+              class="h-10 w-auto object-contain"
+              src="img/logo_parseals_dark.jpeg"
+            />
+          </a>
+        </div>
+        <nav
+          class="hidden xl:flex items-center gap-space-xs"
+          data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"
+        >
+          <a
+            class="px-space-sm py-space-xs font-headline-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors rounded-lg"
+            data-path="inicio"
+            href="index.html"
+            >Início</a
+          >
+          <a
+            class="px-space-sm py-space-xs font-headline-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors rounded-lg"
+            data-path="sobre-a-parseals"
+            href="sobre.html"
+            >Sobre a Parseals</a
+          >
+          <a
+            class="px-space-sm py-space-xs font-headline-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors rounded-lg"
+            data-path="produtos"
+            href="produtos.html"
+            >Produtos</a
+          >
+          <a
+            class="px-space-sm py-space-xs font-headline-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors rounded-lg"
+            data-path="usinagem-sob-medida"
+            href="usinagem.html"
+            >Usinagem sob Medida</a
+          >
+          <a
+            class="px-space-sm py-space-xs font-headline-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors rounded-lg"
+            data-path="solicitar-orcamento"
+            href="orcamento.html"
+            >Solicitar Orçamento</a
+          >
+          <a
+            class="px-space-sm py-space-xs font-headline-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors rounded-lg"
+            data-path="contato"
+            href="contato.html"
+            >Contato</a
+          >
+        </nav>
+        <div class="flex items-center gap-space-sm">
+          <a
+            class="hidden sm:inline-flex items-center justify-center px-space-md py-space-xs rounded-lg bg-secondary text-on-secondary font-headline-sm text-body-sm hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed transition-colors shadow-sm gap-space-xs"
+            data-path="solicitar-orcamento"
+            id="color-font"
+            href="orcamento.html"
+          >
+            <span class="material-symbols-outlined text-[18px]"
+              >request_quote</span
+            >Cotar Agora
+          </a>
+          <a
+            class="inline-flex items-center justify-center px-space-sm py-space-xs rounded-lg bg-surface-container text-primary font-headline-sm text-body-sm hover:bg-surface-container-high transition-colors gap-space-xs"
+            href="https://wa.me/5541991099535"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span class="material-symbols-outlined text-secondary text-[18px]"
+              >chat</span
+            >
+            <span class="hidden md:inline font-label-code text-body-sm"
+              >WhatsApp</span
+            >
+          </a>
+        </div>
+      </div>
+    </header>
+    <main class="w-full bg-surface min-h-[calc(100vh-20rem)] pt-20">
+      <div class="flex flex-col w-full">
+        <!-- Top Technical Breadcrumbs & Status Bar -->
+        <section class="w-full bg-surface-slate py-space-sm px-margin">
+          <div
+            class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-space-sm font-label-code text-body-sm text-on-surface-variant"
+          >
+            <div class="flex items-center gap-space-xs">
+              <a
+                class="hover:text-primary transition-colors"
+                data-path="home"
+                href="#"
+                >Início</a
+              >
+              <span class="text-outline-variant">/</span>
+              <span class="text-primary font-semibold"
+                >Catálogo Geral Técnico</span
+              >
+              <span class="text-outline-variant">/</span>
+              <span class="text-on-surface">Revisão Industrial 2024.4</span>
+            </div>
+            <div class="flex items-center gap-space-md">
+              <div class="flex items-center gap-space-xs">
+                <span
+                  class="h-2 w-2 rounded-full bg-emerald-glow animate-pulse"
+                ></span>
+                <span class="text-primary font-medium"
+                  >Usinagem Express SKF Ativa (Pronto em minutos)</span
+                >
+              </div>
+              <span class="hidden md:inline text-outline-variant">•</span>
+              <span class="hidden md:inline text-on-surface-variant"
+                >Estoque Pronta Entrega: +14.000 perfis</span
+              >
+            </div>
+          </div>
+        </section>
+        <!-- Technical Header & Rapid Search Hub -->
+        <section
+          class="w-full bg-industrial-dark text-on-primary py-space-xl px-margin relative overflow-hidden"
+        >
+          <!-- Laser-grid ambient detail -->
+          <div
+            class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:24px_24px]"
+          ></div>
+          <div class="max-w-7xl mx-auto relative z-10 space-y-space-lg">
+            <div
+              class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md"
+            >
+              <div class="space-y-space-xs max-w-3xl">
+                <div
+                  class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded bg-white/10 text-emerald-glow font-label-caps text-label-caps"
+                >
+                  <span class="material-symbols-outlined text-[16px]"
+                    >verified</span
+                  >
+                  SISTEMAS HIDRÁULICOS, PNEUMÁTICOS E ROTATIVOS
+                </div>
+                <h1
+                  class="font-headline-xl text-headline-xl text-white tracking-tight"
+                >
+                  Catálogo Industrial de Vedações &amp; Gaxetas de Alta
+                  Performance
+                </h1>
+                <p
+                  class="font-body-lg text-body-lg text-on-primary/80 max-w-2xl"
+                >
+                  Soluções para manutenção pesada, reposição direta de linhas
+                  fabris e usinagem CNC dimensional sob desenho. Selecione
+                  abaixo pelo perfil mecânico, composto elastomérico ou fluido
+                  de operação.
+                </p>
+              </div>
+              <!-- Metric badges block -->
+              <div
+                class="grid grid-cols-3 gap-space-sm bg-white/5 p-space-md rounded-xl backdrop-blur-sm"
+              >
+                <div class="space-y-0.5">
+                  <span
+                    class="block font-label-caps text-label-caps text-on-primary/60"
+                    >PRESSÃO MÁX.</span
+                  >
+                  <span
+                    class="font-headline-md text-headline-md text-emerald-glow"
+                    >700 bar</span
+                  >
+                </div>
+                <div class="space-y-0.5">
+                  <span
+                    class="block font-label-caps text-label-caps text-on-primary/60"
+                    >TEMPERATURA</span
+                  >
+                  <span class="font-headline-md text-headline-md text-white"
+                    >-50 a +260°C</span
+                  >
+                </div>
+                <div class="space-y-0.5">
+                  <span
+                    class="block font-label-caps text-label-caps text-on-primary/60"
+                    >TEMPO CNC</span
+                  >
+                  <span
+                    class="font-headline-md text-headline-md text-secondary-fixed"
+                    >Sob Minutos</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Live Search & Filtering Panel -->
+            <div
+              class="bg-surface-card text-on-surface p-space-md rounded-xl shadow-xl space-y-space-md"
+            >
+              <div class="grid grid-cols-1 md:grid-cols-12 gap-space-sm">
+                <!-- Search input -->
+                <div class="md:col-span-6 relative">
+                  <label
+                    class="block font-headline-sm text-body-sm text-primary-container mb-1"
+                    for="catalog-search"
+                    >Busca Rápida de Perfil, Norma ou Código</label
+                  >
+                  <div class="relative flex items-center">
+                    <span
+                      class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px]"
+                      >search</span
+                    >
+                    <input
+                      class="w-full h-11 pl-10 pr-4 bg-surface-slate rounded text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-white transition-all"
+                      id="catalog-search"
+                      placeholder="Ex.: Retentor BABSL, Gaxeta Chevron, O-ring NBR 70, PTFE Bronze..."
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <!-- Compound / Material Selector -->
+                <div class="md:col-span-3">
+                  <label
+                    class="block font-headline-sm text-body-sm text-primary-container mb-1"
+                    for="compound-filter"
+                    >Elastômero / Polímero</label
+                  >
+                  <select
+                    class="w-full h-11 px-3 bg-surface-slate rounded text-body-md text-on-surface focus:outline-none focus:bg-white transition-all"
+                    id="compound-filter"
+                  >
+                    <option value="all">Todos os Compostos</option>
+                    <option value="nbr">NBR (Nitrílica 70/80 Shore)</option>
+                    <option value="fkm">Viton® / FKM Fluorocarbono</option>
+                    <option value="ptfe">PTFE Puro / Grafite / Bronze</option>
+                    <option value="pu">Poliuretano Termoplástico (H-PU)</option>
+                    <option value="epdm">
+                      EPDM Grau Alimentício/Sanitário
+                    </option>
+                    <option value="silicone">
+                      Silicone VMQ Alta Temperatura
+                    </option>
+                    <option value="ffkm">Kalrez® / FFKM Químico Extremo</option>
+                  </select>
+                </div>
+                <!-- Quick Action / CAD upload trigger -->
+                <div class="md:col-span-3 flex items-end">
+                  <a
+                    class="w-full h-11 inline-flex items-center justify-center gap-space-xs bg-primary-container text-white font-headline-sm text-body-sm rounded hover:bg-primary transition-colors shadow-sm"
+                    data-path="solicitar-orcamento"
+                    href="#"
+                  >
+                    <span class="material-symbols-outlined text-[20px]"
+                      >upload_file</span
+                    >
+                    <span>Enviar Desenho Técnico</span>
+                  </a>
+                </div>
+              </div>
+              <!-- Technical Category Chips (Dynamic Switcher) -->
+              <div class="pt-space-xs flex flex-wrap items-center gap-space-xs">
+                <span
+                  class="font-label-caps text-label-caps text-on-surface-variant mr-1"
+                  >FAMÍLIA:</span
+                >
+                <button
+                  class="category-pill active px-3 py-1.5 rounded font-label-code text-body-sm bg-primary-container text-white shadow-sm transition-all"
+                  data-filter="all"
+                  type="button"
+                >
+                  Todos (6 Linhas)
+                </button>
+                <button
+                  class="category-pill px-3 py-1.5 rounded font-label-code text-body-sm bg-surface-slate text-on-surface-variant hover:bg-surface-container transition-all"
+                  data-filter="retentores"
+                  type="button"
+                >
+                  Retentores Industriais
+                </button>
+                <button
+                  class="category-pill px-3 py-1.5 rounded font-label-code text-body-sm bg-surface-slate text-on-surface-variant hover:bg-surface-container transition-all"
+                  data-filter="gaxetas-hidraulicas"
+                  type="button"
+                >
+                  Gaxetas Hidráulicas &amp; Pneumáticas
+                </button>
+                <button
+                  class="category-pill px-3 py-1.5 rounded font-label-code text-body-sm bg-surface-slate text-on-surface-variant hover:bg-surface-container transition-all"
+                  data-filter="gaxetas-especiais"
+                  type="button"
+                >
+                  Gaxetas Especiais &amp; Anéis Químicos
+                </button>
+                <button
+                  class="category-pill px-3 py-1.5 rounded font-label-code text-body-sm bg-surface-slate text-on-surface-variant hover:bg-surface-container transition-all"
+                  data-filter="oring-backup"
+                  type="button"
+                >
+                  Anéis O-Ring &amp; Back-up Rings
+                </button>
+                <button
+                  class="category-pill px-3 py-1.5 rounded font-label-code text-body-sm bg-surface-slate text-on-surface-variant hover:bg-surface-container transition-all"
+                  data-filter="usinadas-cnc"
+                  type="button"
+                >
+                  Vedações Usinadas CNC (SKF Seal Jet)
+                </button>
+                <button
+                  class="category-pill px-3 py-1.5 rounded font-label-code text-body-sm bg-surface-slate text-on-surface-variant hover:bg-surface-container transition-all"
+                  data-filter="raspadores-guias"
+                  type="button"
+                >
+                  Raspadores &amp; Fitas Guia
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Technical Spec & Live Catalog Grid -->
+        <section class="w-full py-space-2xl px-margin bg-surface">
+          <div class="max-w-7xl mx-auto space-y-space-xl">
+            <!-- Section Intro / Context -->
+            <div
+              class="flex flex-col md:flex-row md:items-end justify-between gap-space-md"
+            >
+              <div>
+                <span
+                  class="font-label-caps text-label-caps text-secondary font-bold"
+                  >ESPECIFICAÇÕES RIGOROSAS DIN / ISO / SAE</span
+                >
+                <h2
+                  class="font-headline-lg text-headline-lg text-primary tracking-tight"
+                >
+                  Sistemas de Vedação Industrial de Alta Confiabilidade
+                </h2>
+              </div>
+              <div
+                class="flex items-center gap-space-md text-on-surface-variant font-label-code text-body-sm"
+              >
+                <span class="flex items-center gap-1"
+                  ><span
+                    class="h-2.5 w-2.5 rounded-full bg-emerald-glow"
+                  ></span>
+                  Em Estoque</span
+                >
+                <span class="flex items-center gap-1"
+                  ><span
+                    class="h-2.5 w-2.5 rounded-full bg-secondary-fixed-dim"
+                  ></span>
+                  Usinagem em 15 min</span
+                >
+                <span class="flex items-center gap-1"
+                  ><span
+                    class="h-2.5 w-2.5 rounded-full bg-tertiary-fixed-dim"
+                  ></span>
+                  Certificado de Material Incluso</span
+                >
+              </div>
+            </div>
+            <!-- Main Products Technical Cards Grid -->
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg"
+              id="product-grid"
+            >
+              <!-- CARD 1: Retentores Industriais -->
+              <article
+                class="product-item flex flex-col bg-surface-card rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all group"
+                data-category="retentores"
+              >
+                <div class="relative h-56 bg-surface-slate overflow-hidden">
+                  <img
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    data-alt="Industrial rotary shaft oil seals BA and BABSL cross section diagram macro photography on clean slate engineering background, matte finish, green precision ambient illumination, hyper-detailed mechanical parts"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4jEMSc5oKO25NPVrwP2LLzeMBIP06F3RP4VUvsDsnySeKhLc-fwdugqXiv2A2jvqtmvui9hadkvmqt7SAuq4JrPIawLjaavNkBL8p_7oNeyXE6j1wBUVr7ZBPo2_xVi6kvR4UeyTeQyNPxXLcb5a7YKiHQNEGUAaldTFIemT3Uwf0ZuVCGOtCg15TqQTPD6JVViyikHhVm-hEzLPn6LIycByh-gHvD940yNWKOYnJTlETIAuZIdxylA"
+                  />
+                  <div class="absolute top-3 left-3 flex flex-wrap gap-1">
+                    <span
+                      class="px-2 py-0.5 rounded bg-primary-container text-white font-label-caps text-label-caps"
+                      >LINHA 01</span
+                    >
+                    <span
+                      class="px-2 py-0.5 rounded bg-emerald-glow text-industrial-dark font-label-caps text-label-caps font-bold"
+                      >DIN 3760</span
+                    >
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-industrial-dark/90 text-white px-2.5 py-1 rounded font-label-code text-body-sm"
+                  >
+                    Pressão: até 10 bar (BABSL)
+                  </div>
+                </div>
+                <div
+                  class="p-space-lg flex-1 flex flex-col justify-between space-y-space-md"
+                >
+                  <div class="space-y-space-xs">
+                    <div class="flex items-center justify-between">
+                      <span
+                        class="font-label-caps text-label-caps text-secondary"
+                        >EIXOS ROTATIVOS E REDUTORES</span
+                      >
+                      <span
+                        class="font-label-code text-body-sm text-on-surface-variant"
+                        >Código: RET-IND</span
+                      >
+                    </div>
+                    <h3
+                      class="font-headline-md text-headline-md text-on-surface"
+                    >
+                      Retentores Industriais de Precisão
+                    </h3>
+                    <p
+                      class="font-body-md text-body-md text-on-surface-variant"
+                    >
+                      Desenvolvidos para motores elétricos, bombas centrífugas,
+                      redutores planetários e caixas de transmissão com lábio de
+                      vedação elastomérico energizado por mola de tração.
+                    </p>
+                  </div>
+                  <!-- Detailed Specifications List -->
+                  <div
+                    class="bg-surface-slate p-space-sm rounded space-y-1.5 font-label-code text-body-sm"
+                  >
+                    <div class="flex justify-between">
+                      <span class="text-on-surface-variant"
+                        >Perfis Disponíveis:</span
+                      >
+                      <span class="font-semibold text-primary"
+                        >BA, B1, B2, BABSL, BAOF</span
+                      >
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-on-surface-variant"
+                        >Materiais Elastoméricos:</span
+                      >
+                      <span class="font-semibold text-primary"
+                        >NBR 70/80, Viton® FKM, Silicone</span
+                      >
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-on-surface-variant"
+                        >Velocidade Periférica:</span
+                      >
+                      <span class="font-semibold text-primary">até 35 m/s</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-on-surface-variant"
+                        >Faixa Térmica:</span
+                      >
+                      <span class="font-semibold text-primary"
+                        >-40°C a +200°C</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Action Block -->
+                  <div class="pt-space-xs flex items-center gap-space-xs">
+                    <a
+                      class="flex-1 inline-flex items-center justify-center gap-1.5 h-11 bg-primary-container text-white font-headline-sm text-body-sm rounded hover:bg-primary transition-colors"
+                      data-path="solicitar-orcamento"
+                      href="#"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >request_quote</span
+                      >
+                      <span>Cotar Dimensões</span>
+                    </a>
+                    <a
+                      class="h-11 px-3 inline-flex items-center justify-center rounded bg-surface-container hover:bg-surface-container-high text-primary transition-colors"
+                      href="https://wa.me/5541991099535?text=Olá,%20preciso%20de%20cotação%20para%20Retentores%20Industriais"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      title="Suporte Técnico Imediato"
+                    >
+                      <span class="material-symbols-outlined text-[20px]"
+                        >chat</span
+                      >
+                    </a>
+                  </div>
+                </div>
+              </article>
+              <!-- CARD 2: Gaxetas Hidráulicas & Pneumáticas -->
+              <article
+                class="product-item flex flex-col bg-surface-card rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all group"
+                data-category="gaxetas-hidraulicas"
+              >
+                <div class="relative h-56 bg-surface-slate overflow-hidden">
+                  <img
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    data-alt="Hydraulic cylinder u-cup chevron seals pack on steel rod precision background, industrial high pressure seal components with sharp technical focus, studio lighting with green reflections"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHy6TUsAG8omWzNPeueB03kEvsw5AW7BCzNPG0W_gzzHw-akXft2yAnI5wlQXTENoz_eZQKe2wwMpklWksYtpUwnyxQ_nKKn8PH0RV-Q_lQPt9Qy6OPCZueIabypcK3QlAsPfm-gl0yy0CP0nVOPDWUmSrkBSHXVkOYzejPdMioN3CGbVK4zX6uX-VRpBUoKDxf8GRgYG_jwW9P3EDQ6HgeG8QEEscBVz8p3_cU9e8bnt2mI2NqG8PpQ"
+                  />
+                  <div class="absolute top-3 left-3 flex flex-wrap gap-1">
+                    <span
+                      class="px-2 py-0.5 rounded bg-primary-container text-white font-label-caps text-label-caps"
+                      >LINHA 02</span
+                    >
+                    <span
+                      class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-caps text-label-caps font-bold"
+                      >HEAVY DUTY</span
+                    >
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-industrial-dark/90 text-white px-2.5 py-1 rounded font-label-code text-body-sm"
+                  >
+                    Pressão: até 700 bar
+                  </div>
+                </div>
+                <div
+                  class="p-space-lg flex-1 flex flex-col justify-between space-y-space-md"
+                >
+                  <div class="space-y-space-xs">
+                    <div class="flex items-center justify-between">
+                      <span
+                        class="font-label-caps text-label-caps text-secondary"
+                        >CILINDROS PESADOS &amp; PRENSAS</span
+                      >
+                      <span
+                        class="font-label-code text-body-sm text-on-surface-variant"
+                        >Código: GAX-HP</span
+                      >
+                    </div>
+                    <h3
+                      class="font-headline-md text-headline-md text-on-surface"
+                    >
+                      Gaxetas Hidráulicas &amp; Pneumáticas
+                    </h3>
+                    <p
+                      class="font-body-md text-body-md text-on-surface-variant"
+                    >
+                      Vedações de êmbolo e haste com lábios simétricos e
+                      assimétricos, projetadas para resistir a picos intensos de
+                      pressão, choques mecânicos e atrito dinâmico contínuo.
+                    </p>
+                  </div>
+                  <!-- Detailed Specifications List -->
+                  <div
+                    class="bg-surface-slate p-space-sm rounded space-y-1.5 font-label-code text-body-sm"
+                  >
+                    <div class="flex justify-between">
+                      <span class="text-on-surface-variant"
+                        >Configurações:</span
+                      >
+                      <span class="font-semibold text-primary"
+                        >U-Cup, Chevron Multianéis, Compacta</span
+                      >
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-on-surface-variant">Compostos:</span>
+                      <span class="font-semibold text-primary"
+                        >Poliuretano TPU 95, NBR + Lona, Viton</span
+                      >
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-on-surface-variant"
+                        >Velocidade Máxima:</span
+                      >
+                      <span class="font-semibold text-primary"
+                        >1.0 m/s (TPU) | 0.5 m/s (Lona)</span
+                      >
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-on-surface-variant"
+                        >Aplicações Típicas:</span
+                      >
+                      <span class="font-semibold text-primary"
+                        >Prensas, Britadores, Mineração</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Action Block -->
+                  <div class="pt-space-xs flex items-center gap-space-xs">
+                    <a
+                      class="flex-1 inline-flex items-center justify-center gap-1.5 h-11 bg-primary-container text-white font-headline-sm text-body-sm rounded hover:bg-primary transition-colors"
+                      data-path="solicitar-orcamento"
+                      href="#"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >request_quote</span
+                      >
+                      <span>Cotar Gaxetas</span>
+                    </a>
+                    <a
+                      class="h-11 px-3 inline-flex items-center justify-center rounded bg-surface-container hover:bg-surface-container-high text-primary transition-colors"
+                      href="https://wa.me/5541991099535?text=Olá,%20gostaria%20de%20orçamento%20para%20Gaxetas%20Hidráulicas"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      title="Suporte Técnico Imediato"
+                    >
+                      <span class="material-symbols-outlined text-[20px]"
+                        >chat</span
+                      >
+                    </a>
+                  </div>
+                </div>
+              </article>
+              <!-- CARD 3: Gaxetas Especiais & Anéis Químicos -->
+              <article
+                class="product-item flex flex-col bg-surface-card rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all group"
+                data-category="gaxetas-especiais"
+              >
+                <div class="relative h-56 bg-surface-slate overflow-hidden">
+                  <img
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    data-alt="High performance PTFE seals, carbon filled machined gasket rings, Kalrez components for chemical industry, pristine technical industrial showcase"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDANcq2-rkrjzbmCPW5qznM5D0mYDU1UNl4A_4Jq-TSJNyu50GXCw-F0lJoSR2PF1m3u8MiifF1gwORJZ1h0JEPV1PJ0G3zbItQ5B7jkN0nZZQmd-OL3PehYEesSGpiaXk4SX_FgyXhgSOjVkP-sEtOYVNR0gUW3bvqo0htxsKzeoK0oq-Aji-PxcnPUOlsKW6ZR5r1YrwoAYOkOw7-fiMhJhM3pkU4VxLkQWxEYVdh9EuILCvL4o9BNw"
+                  />
+                  <div class="absolute top-3 left-3 flex flex-wrap gap-1">
+                    <span
+                      class="px-2 py-0.5 rounded bg-primary-container text-white font-label-caps text-label-caps"
+                      >LINHA 03</span
+                    >
+                    <span
+                      class="px-2 py-0.5 rounded bg-urgent-red text-white font-label-caps text-label-caps font-bold"
+                      >FLUIDOS CORROSIVOS</span
+                    >
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-industrial-dark/90 text-white px-2.5 py-1 rounded font-label-code text-body-sm"
+                  >
+                    Temp: -50°C a +260°C
+                  </div>
+                </div>
+                <div
+                  class="p-space-lg flex-1 flex flex-col justify-between space-y-space-md"
+                >
+                  <div class="space-y-space-xs">
+                    <div class="flex items-center justify-between">
+                      <span
+                        class="font-label-caps text-label-caps text-secondary"
+                        >INDÚSTRIA QUÍMICA &amp; ÓLEO &amp; GÁS</span
+                      >
+                      <span
+                        class="font-label-code text-body-sm text-on-surface-variant"
+                        >Código: GAX-ESP</span
+                      >
+                    </div>
+                    <h3
+                      class="font-headline-md text-headline-md text-on-surface"
+                    >
+                      Gaxetas Especiais &amp; Anéis Químicos
+                    </h3>
+                    <p
+                      class="font-body-md text-body-md text-on-surface-variant"
+                    >
+                      Soluções de engenharia avançada desenvolvidas para
+                      ambientes com ácidos, vapor superaquecido, solventes
+                      clorados, bases concentradas e temperaturas críticas.
+                    </p>
+                  </div>
+                  <!-- Detailed Specifications List -->
+                  <div
+                    class="bg-surface-slate p-space-sm rounded space-y-1.5 font-label-code text-body-sm"
+                  >
+                    <div class="flex justify-between">
+                      <span class="text-on-surface-variant"
+                        >Materiais Especiais:</span
+                      >
+                      <span class="font-semibold text-primary"
+                        >PTFE Virgem, Grafite, Bronze, Kalrez®</span
+                      >
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-on-surface-variant"
+                        >Inércia Química:</span
+                      >
+                      <span class="font-semibold text-primary"
+                        >Compatível pH 0 a 14</span
+                      >
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-on-surface-variant"
+                        >Coeficiente de Atrito:</span
+                      >
+                      <span class="font-semibold text-primary"
+                        >0.04 (Autolubrificante)</span
+                      >
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-on-surface-variant">Conformidade:</span>
+                      <span class="font-semibold text-primary"
+                        >FDA 21 CFR / NACE MR0175</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Action Block -->
+                  <div class="pt-space-xs flex items-center gap-space-xs">
+                    <a
+                      class="flex-1 inline-flex items-center justify-center gap-1.5 h-11 bg-primary-container text-white font-headline-sm text-body-sm rounded hover:bg-primary transition-colors"
+                      data-path="solicitar-orcamento"
+                      href="#"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >request_quote</span
+                      >
+                      <span>Análise de Fluido</span>
+                    </a>
+                    <a
+                      class="h-11 px-3 inline-flex items-center justify-center rounded bg-surface-container hover:bg-surface-container-high text-primary transition-colors"
+                      href="https://wa.me/5541991099535?text=Olá,%20preciso%20de%20Gaxetas%20Especiais%20para%20produtos%20químicos"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      title="Suporte Técnico Imediato"
+                    >
+                      <span class="material-symbols-outlined text-[20px]"
+                        >chat</span
+                      >
+                    </a>
+                  </div>
+                </div>
+              </article>
+              <!-- CARD 4: Anéis O-Ring & Back-up Rings -->
+              <article
+                class="product-item flex flex-col bg-surface-card rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all group"
+                data-category="oring-backup"
+              >
+                <div class="relative h-56 bg-surface-slate overflow-hidden">
+                  <img
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    data-alt="Assortment of black NBR, brown Viton and translucent silicone O-rings with back-up spiral rings neatly arranged on industrial measurement caliper blueprint"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEymQ09kpkD6VCawJXVPuG_rKHRg-8CBYK6nTQl9XVuWBa6U963fWWRxTtiH3dQTt52tlGDp_B25dEl_fn0LRBrQr9DPAxnTrAI4P2x23oVtvWb2ctQYnvCKcPBHUYrvvvCConb0uKomst_Q7UzlIIpIoZWNcsEoucGyxBS4XKwbBxFzSxM9P0O0sCYBguZHKJqi41JeBbrkQ95_Ngm5oowZYsH5aQpuz0j3hWCTri-Y2QrGN3Z8J30w"
+                  />
+                  <div class="absolute top-3 left-3 flex flex-wrap gap-1">
+                    <span
+                      class="px-2 py-0.5 rounded bg-primary-container text-white font-label-caps text-label-caps"
+                      >LINHA 04</span
+                    >
+                    <span
+                      class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-caps text-label-caps font-bold"
+                      >AS-568 / MÉTRICO</span
+                    >
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-industrial-dark/90 text-white px-2.5 py-1 rounded font-label-code text-body-sm"
+                  >
+                    Estoque Pronta Entrega
+                  </div>
+                </div>
+                <div
+                  class="p-space-lg flex-1 flex flex-col justify-between space-y-space-md"
+                >
+                  <div class="space-y-space-xs">
+                    <div class="flex items-center justify-between">
+                      <span
+                        class="font-label-caps text-label-caps text-secondary"
+                        >VEDAÇÃO ESTÁTICA &amp; QUASE-ESTÁTICA</span
+                      >
+                      <span
+                        class="font-label-code text-body-sm text-on-surface-variant"
+                        >Código: ORING-BK</span
+                      >
+                    </div>
+                    <h3
+                      class="font-headline-md text-headline-md text-on-surface"
+                    >
+                      Anéis O-Ring &amp; Back-up Rings
+                    </h3>
+                    <p
+                      class="font-body-md text-body-md text-on-surface-variant"
+                    >
+                      Normas internacionais em polegadas (AS-568, BS 1806) e
+                      milimétricas (DIN 3771). Acompanhados de anéis
+                      antiextrusão para altas pressões com folgas diametrais
+                      elevadas.
+                    </p>
+                  </div>
+                  <!-- Detailed Specifications List -->
+                  <div
+                    class="bg-surface-slate p-space-sm rounded space-y-1.5 font-label-code text-body-sm"
+                  >
+                    <div class="flex justify-between">
+                      <span class="text-on-surface-variant">Elastômeros:</span>
+                      <span class="font-semibold text-primary"
+                        >NBR 70/90, Viton® FKM, EPDM, Silicone</span
+                      >
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-on-surface-variant"
+                        >Back-up Rings:</span
+                      >
+                      <span class="font-semibold text-primary"
+                        >PTFE Virgem (Espiral, Côncavo, Sólido)</span
+                      >
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-on-surface-variant"
+                        >Dureza Shore A:</span
+                      >
+                      <span class="font-semibold text-primary"
+                        >60 a 95 Shore A</span
+                      >
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-on-surface-variant"
+                        >Disponibilidade:</span
+                      >
+                      <span class="font-semibold text-primary"
+                        >+8.500 medidas em catálogo</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Action Block -->
+                  <div class="pt-space-xs flex items-center gap-space-xs">
+                    <a
+                      class="flex-1 inline-flex items-center justify-center gap-1.5 h-11 bg-primary-container text-white font-headline-sm text-body-sm rounded hover:bg-primary transition-colors"
+                      data-path="solicitar-orcamento"
+                      href="#"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >request_quote</span
+                      >
+                      <span>Tabela AS-568</span>
+                    </a>
+                    <a
+                      class="h-11 px-3 inline-flex items-center justify-center rounded bg-surface-container hover:bg-surface-container-high text-primary transition-colors"
+                      href="https://wa.me/5541991099535?text=Olá,%20preciso%20consultar%20medidas%20de%20O-Rings"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      title="Suporte Técnico Imediato"
+                    >
+                      <span class="material-symbols-outlined text-[20px]"
+                        >chat</span
+                      >
+                    </a>
+                  </div>
+                </div>
+              </article>
+              <!-- CARD 5: Vedações Usinadas CNC SKF SEAL JET -->
+              <article
+                class="product-item flex flex-col bg-surface-card rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all group"
+                data-category="usinadas-cnc"
+              >
+                <div class="relative h-56 bg-surface-slate overflow-hidden">
+                  <img
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    data-alt="High precision CNC lathe manufacturing custom polymer seal with fine shavings, green industrial lubricant fluid, machining customized seal jet components"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL4TcjHAmr0wgFwao5p3HROZbCKrqmErp1V0dW4kTv23p4uZL9nJwU6PB24yYZ2wy9oyLgYX1ekcZvbeDWL7071psWokkbK7t9OwZA5zM9lImPAk30X4DeWMPAk0N565tXF5fKwIob6VigfPCq4WiytQIaswnyEzJsoR0Ysu0NK0aChoIO2zRw0iDiM8z5oPzhFgne_96CSuXnHawwKvK2QSGCP19dn3kLWxhrSMtvyn51-kLrKOIg1Q"
+                  />
+                  <div class="absolute top-3 left-3 flex flex-wrap gap-1">
+                    <span
+                      class="px-2 py-0.5 rounded bg-primary-container text-white font-label-caps text-label-caps"
+                      >LINHA 05</span
+                    >
+                    <span
+                      class="px-2 py-0.5 rounded bg-emerald-glow text-industrial-dark font-label-caps text-label-caps font-bold"
+                      >SKF SEAL JET</span
+                    >
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-industrial-dark/90 text-white px-2.5 py-1 rounded font-label-code text-body-sm"
+                  >
+                    Fabricação: Em Minutos
+                  </div>
+                </div>
+                <div
+                  class="p-space-lg flex-1 flex flex-col justify-between space-y-space-md"
+                >
+                  <div class="space-y-space-xs">
+                    <div class="flex items-center justify-between">
+                      <span
+                        class="font-label-caps text-label-caps text-secondary"
+                        >USINAGEM SOB MEDIDA CNC</span
+                      >
+                      <span
+                        class="font-label-code text-body-sm text-on-surface-variant"
+                        >Código: CNC-SKF</span
+                      >
+                    </div>
+                    <h3
+                      class="font-headline-md text-headline-md text-on-surface"
+                    >
+                      Vedações Usinadas CNC Express
+                    </h3>
+                    <p
+                      class="font-body-md text-body-md text-on-surface-variant"
+                    >
+                      Tecnologia proprietária que dispensa moldes caros.
+                      Produção imediata de perfis sob amostra desgastada ou
+                      desenho dimensional para cilindros especiais e importados.
+                    </p>
+                  </div>
+                  <!-- Detailed Specifications List -->
+                  <div
+                    class="bg-surface-slate p-space-sm rounded space-y-1.5 font-label-code text-body-sm"
+                  >
+                    <div class="flex justify-between">
+                      <span class="text-on-surface-variant"
+                        >Diâmetro de Usinagem:</span
+                      >
+                      <span class="font-semibold text-primary"
+                        >Ø 4mm até Ø 600mm</span
+                      >
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-on-surface-variant"
+                        >Materiais Certificados:</span
+                      >
+                      <span class="font-semibold text-primary"
+                        >ECOPUR, H-PU, X-ECOPUR, POM, PTFE</span
+                      >
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-on-surface-variant"
+                        >Tolerância Dimensional:</span
+                      >
+                      <span class="font-semibold text-primary"
+                        >Grau ISO IT8 / IT9</span
+                      >
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-on-surface-variant"
+                        >Prazo de Envio:</span
+                      >
+                      <span class="font-semibold text-primary"
+                        >Despacho no mesmo dia</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Action Block -->
+                  <div class="pt-space-xs flex items-center gap-space-xs">
+                    <a
+                      class="flex-1 inline-flex items-center justify-center gap-1.5 h-11 bg-secondary text-on-secondary font-headline-sm text-body-sm rounded hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed transition-colors font-semibold"
+                      data-path="solicitar-orcamento"
+                      href="#"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >precision_manufacturing</span
+                      >
+                      <span>Fabricar Peça CNC</span>
+                    </a>
+                    <a
+                      class="h-11 px-3 inline-flex items-center justify-center rounded bg-surface-container hover:bg-surface-container-high text-primary transition-colors"
+                      href="https://wa.me/5541991099535?text=Olá,%20preciso%20de%20usinagem%20expressa%20SKF%20Seal%20Jet"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      title="Suporte Técnico Imediato"
+                    >
+                      <span class="material-symbols-outlined text-[20px]"
+                        >chat</span
+                      >
+                    </a>
+                  </div>
+                </div>
+              </article>
+              <!-- CARD 6: Raspadores e Fitas Guia -->
+              <article
+                class="product-item flex flex-col bg-surface-card rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all group"
+                data-category="raspadores-guias"
+              >
+                <div class="relative h-56 bg-surface-slate overflow-hidden">
+                  <img
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    data-alt="Industrial metal-cased polyurethane rod wiper seal and turquoise wear guide strip on hydraulic chrome plated piston rod"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYZlbWGbpHXYnQdgeu4ZQlJ6Fx28Lt6MfL9QHf9HaPfsiP2I0fKHG8Ri3CFOI92y2E8FLLnfWV2qQfwOzgCfgQ5b9M9Sl_pVRzO-BKeOij2ld8K_fKoE8JdLblfB1o3zYcGXCcmSCEVsuBGSdJnE939CzW5C2a-knAIS0Apg10t8qPuY0ekjpnI_iK007FoPe2LuKDhWkHMvPQHkMJ1E5oKd3r6I-_gIpg2YV0k1lZke0rTDQd66Y8IA"
+                  />
+                  <div class="absolute top-3 left-3 flex flex-wrap gap-1">
+                    <span
+                      class="px-2 py-0.5 rounded bg-primary-container text-white font-label-caps text-label-caps"
+                      >LINHA 06</span
+                    >
+                    <span
+                      class="px-2 py-0.5 rounded bg-outline-variant text-on-surface font-label-caps text-label-caps font-bold"
+                      >PROTEÇÃO DE HASTE</span
+                    >
+                  </div>
+                  <div
+                    class="absolute bottom-3 right-3 bg-industrial-dark/90 text-white px-2.5 py-1 rounded font-label-code text-body-sm"
+                  >
+                    Carga Guia: até 280 N/mm²
+                  </div>
+                </div>
+                <div
+                  class="p-space-lg flex-1 flex flex-col justify-between space-y-space-md"
+                >
+                  <div class="space-y-space-xs">
+                    <div class="flex items-center justify-between">
+                      <span
+                        class="font-label-caps text-label-caps text-secondary"
+                        >PROTEÇÃO CONTRA CONTAMINANTES</span
+                      >
+                      <span
+                        class="font-label-code text-body-sm text-on-surface-variant"
+                        >Código: GUI-RASP</span
+                      >
+                    </div>
+                    <h3
+                      class="font-headline-md text-headline-md text-on-surface"
+                    >
+                      Raspadores de Haste &amp; Fitas Guia
+                    </h3>
+                    <p
+                      class="font-body-md text-body-md text-on-surface-variant"
+                    >
+                      Barreira mecânica contra poeira abrasiva, cascalho,
+                      resíduos químicos e umidade externa. Fitas de desgaste
+                      evitam o contato metal-metal em êmbolos e cabeçotes.
+                    </p>
+                  </div>
+                  <!-- Detailed Specifications List -->
+                  <div
+                    class="bg-surface-slate p-space-sm rounded space-y-1.5 font-label-code text-body-sm"
+                  >
+                    <div class="flex justify-between">
+                      <span class="text-on-surface-variant"
+                        >Modelos de Raspador:</span
+                      >
+                      <span class="font-semibold text-primary"
+                        >Lábio PU, Carcaça Metálica, Duplo Lábio</span
+                      >
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-on-surface-variant">Fitas Guia:</span>
+                      <span class="font-semibold text-primary"
+                        >PTFE + Bronze, Resina Fenólica reforçada</span
+                      >
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-on-surface-variant"
+                        >Absorção de Umidade:</span
+                      >
+                      <span class="font-semibold text-primary"
+                        >&lt; 0.1% (estabilidade geométrica)</span
+                      >
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-on-surface-variant">Fornecimento:</span>
+                      <span class="font-semibold text-primary"
+                        >Em rolo ou cortado sob medida exata</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Action Block -->
+                  <div class="pt-space-xs flex items-center gap-space-xs">
+                    <a
+                      class="flex-1 inline-flex items-center justify-center gap-1.5 h-11 bg-primary-container text-white font-headline-sm text-body-sm rounded hover:bg-primary transition-colors"
+                      data-path="solicitar-orcamento"
+                      href="#"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >request_quote</span
+                      >
+                      <span>Cotar Linha Guia</span>
+                    </a>
+                    <a
+                      class="h-11 px-3 inline-flex items-center justify-center rounded bg-surface-container hover:bg-surface-container-high text-primary transition-colors"
+                      href="https://wa.me/5541991099535?text=Olá,%20preciso%20de%20Raspadores%20e%20Fitas%20Guia"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      title="Suporte Técnico Imediato"
+                    >
+                      <span class="material-symbols-outlined text-[20px]"
+                        >chat</span
+                      >
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+        <!-- Polymer & Elastomer Compatibility Engineering Table -->
+        <section class="w-full py-space-2xl px-margin bg-surface-slate">
+          <div class="max-w-7xl mx-auto space-y-space-lg">
+            <div
+              class="flex flex-col md:flex-row md:items-end justify-between gap-space-md"
+            >
+              <div class="space-y-space-xs max-w-2xl">
+                <div
+                  class="inline-flex items-center gap-space-xs px-2.5 py-0.5 rounded bg-primary-container/10 text-primary font-label-caps text-label-caps"
+                >
+                  <span class="material-symbols-outlined text-[16px]"
+                    >science</span
+                  >
+                  ENGENHARIA DE MATERIAIS PARSEALS
+                </div>
+                <h2 class="font-headline-lg text-headline-lg text-on-surface">
+                  Guia Rápido de Compatibilidade de Polímeros &amp; Elastômeros
+                </h2>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Matriz de decisão técnica para dimensionamento seguro de
+                  vedações frente a temperaturas limites, agressividade química
+                  e pressões operacionais.
+                </p>
+              </div>
+              <a
+                class="inline-flex items-center gap-space-xs text-secondary font-headline-sm text-body-sm font-semibold hover:underline"
+                data-path="solicitar-orcamento"
+                href="#"
+              >
+                <span class="material-symbols-outlined text-[18px]"
+                  >help_center</span
+                >
+                <span>Consultar Engenheiro de Aplicação</span>
+              </a>
+            </div>
+            <!-- Mechanical Specification Table Card -->
+            <div class="bg-surface-card rounded-xl shadow-md overflow-hidden">
+              <div class="overflow-x-auto">
+                <table
+                  class="w-full text-left font-body-sm text-body-sm border-collapse"
+                >
+                  <thead>
+                    <tr
+                      class="bg-surface-slate text-primary-container font-headline-sm text-body-sm"
+                    >
+                      <th class="p-space-md">Composto / Elastômero</th>
+                      <th class="p-space-md">Faixa de Temperatura</th>
+                      <th class="p-space-md">Resistência Química Principal</th>
+                      <th class="p-space-md">Fluidos NÃO Recomendados</th>
+                      <th class="p-space-md text-right">
+                        Pressão Típica Suportada
+                      </th>
+                      <th class="p-space-md text-center">Status Parseals</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-border-subtle font-label-code">
+                    <!-- NBR Row -->
+                    <tr class="hover:bg-surface-slate/60 transition-colors">
+                      <td class="p-space-md">
+                        <div
+                          class="font-headline-sm text-body-sm text-on-surface"
+                        >
+                          NBR (Borracha Nitrílica)
+                        </div>
+                        <span
+                          class="font-label-caps text-[0.65rem] text-on-surface-variant"
+                          >70 / 80 / 90 Shore A</span
+                        >
+                      </td>
+                      <td class="p-space-md text-on-surface">-30°C a +100°C</td>
+                      <td class="p-space-md text-on-surface">
+                        Óleos minerais, graxas, água até 80°C, GLP
+                      </td>
+                      <td class="p-space-md text-urgent-red">
+                        Fluidos de freio (glicol), ozônio, cetonas
+                      </td>
+                      <td
+                        class="p-space-md text-right font-semibold text-primary"
+                      >
+                        Até 400 bar (c/ backup)
+                      </td>
+                      <td class="p-space-md text-center">
+                        <span
+                          class="inline-block px-2 py-0.5 rounded bg-primary-container/10 text-primary text-[0.7rem] font-bold"
+                          >Estoque Imediato</span
+                        >
+                      </td>
+                    </tr>
+                    <!-- Viton / FKM Row -->
+                    <tr
+                      class="bg-surface-slate/30 hover:bg-surface-slate/60 transition-colors"
+                    >
+                      <td class="p-space-md">
+                        <div
+                          class="font-headline-sm text-body-sm text-on-surface"
+                        >
+                          Viton® (FKM Fluorocarbono)
+                        </div>
+                        <span
+                          class="font-label-caps text-[0.65rem] text-on-surface-variant"
+                          >75 / 80 / 90 Shore A</span
+                        >
+                      </td>
+                      <td class="p-space-md text-on-surface">-20°C a +200°C</td>
+                      <td class="p-space-md text-on-surface">
+                        Combustíveis, hidrocarbonetos aromáticos, vácuo alto
+                      </td>
+                      <td class="p-space-md text-urgent-red">
+                        Amônia anidra, vapor acima de 150°C, ésteres
+                      </td>
+                      <td
+                        class="p-space-md text-right font-semibold text-primary"
+                      >
+                        Até 450 bar
+                      </td>
+                      <td class="p-space-md text-center">
+                        <span
+                          class="inline-block px-2 py-0.5 rounded bg-primary-container/10 text-primary text-[0.7rem] font-bold"
+                          >Estoque Imediato</span
+                        >
+                      </td>
+                    </tr>
+                    <!-- PTFE Composto Row -->
+                    <tr class="hover:bg-surface-slate/60 transition-colors">
+                      <td class="p-space-md">
+                        <div
+                          class="font-headline-sm text-body-sm text-on-surface"
+                        >
+                          PTFE + 15% Bronze / Carbono
+                        </div>
+                        <span
+                          class="font-label-caps text-[0.65rem] text-on-surface-variant"
+                          >Autolubrificante</span
+                        >
+                      </td>
+                      <td class="p-space-md text-on-surface">
+                        -200°C a +260°C
+                      </td>
+                      <td class="p-space-md text-on-surface">
+                        Inerte a quase todos os agentes químicos industriais
+                      </td>
+                      <td class="p-space-md text-urgent-red">
+                        Metais alcalinos fundidos, flúor elementar gasoso
+                      </td>
+                      <td
+                        class="p-space-md text-right font-semibold text-emerald-glow"
+                      >
+                        Até 700 bar
+                      </td>
+                      <td class="p-space-md text-center">
+                        <span
+                          class="inline-block px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed text-[0.7rem] font-bold"
+                          >Usinagem Express</span
+                        >
+                      </td>
+                    </tr>
+                    <!-- Poliuretano H-PU Row -->
+                    <tr
+                      class="bg-surface-slate/30 hover:bg-surface-slate/60 transition-colors"
+                    >
+                      <td class="p-space-md">
+                        <div
+                          class="font-headline-sm text-body-sm text-on-surface"
+                        >
+                          Poliuretano Hidráulico (H-PU)
+                        </div>
+                        <span
+                          class="font-label-caps text-[0.65rem] text-on-surface-variant"
+                          >95 Shore A / SKF ECOPUR</span
+                        >
+                      </td>
+                      <td class="p-space-md text-on-surface">-30°C a +115°C</td>
+                      <td class="p-space-md text-on-surface">
+                        Resistência extrema à abrasão, corte e extrusão mecânica
+                      </td>
+                      <td class="p-space-md text-urgent-red">
+                        Ácidos concentrados, solventes puros
+                      </td>
+                      <td
+                        class="p-space-md text-right font-semibold text-emerald-glow"
+                      >
+                        Até 600 bar
+                      </td>
+                      <td class="p-space-md text-center">
+                        <span
+                          class="inline-block px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed text-[0.7rem] font-bold"
+                          >Usinagem Express</span
+                        >
+                      </td>
+                    </tr>
+                    <!-- EPDM Sanitário Row -->
+                    <tr class="hover:bg-surface-slate/60 transition-colors">
+                      <td class="p-space-md">
+                        <div
+                          class="font-headline-sm text-body-sm text-on-surface"
+                        >
+                          EPDM Sanitário / Alimentício
+                        </div>
+                        <span
+                          class="font-label-caps text-[0.65rem] text-on-surface-variant"
+                          >FDA Compliant</span
+                        >
+                      </td>
+                      <td class="p-space-md text-on-surface">-45°C a +150°C</td>
+                      <td class="p-space-md text-on-surface">
+                        Vapor d'água, sistemas CIP/SIP, fluidos sanitários
+                      </td>
+                      <td class="p-space-md text-urgent-red">
+                        Óleos minerais, graxas fósseis, querosene
+                      </td>
+                      <td
+                        class="p-space-md text-right font-semibold text-primary"
+                      >
+                        Até 250 bar
+                      </td>
+                      <td class="p-space-md text-center">
+                        <span
+                          class="inline-block px-2 py-0.5 rounded bg-primary-container/10 text-primary text-[0.7rem] font-bold"
+                          >Estoque Imediato</span
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Technical Custom Engineering Banner / Call to Action -->
+        <section
+          class="w-full py-space-2xl px-margin bg-primary-container text-white relative overflow-hidden"
+        >
+          <div
+            class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center relative z-10"
+          >
+            <div class="lg:col-span-8 space-y-space-md">
+              <div
+                class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded bg-white/10 text-emerald-glow font-label-caps text-label-caps"
+              >
+                <span class="material-symbols-outlined text-[16px]"
+                  >build_circle</span
+                >
+                NÃO ENCONTROU O PERFIL OU A MEDIDA EXATA?
+              </div>
+              <h2
+                class="font-headline-xl text-headline-xl text-white tracking-tight"
+              >
+                Desenvolvemos Vedações Sob Medida, Desenho 2D/3D ou Amostra
+                Desgastada
+              </h2>
+              <p class="font-body-lg text-body-lg text-white/80 max-w-3xl">
+                Nossa bancada de engenharia em Curitiba dispõe de paquímetros
+                digitais micrométricos e sistema CAD/CAM integrado à máquina SKF
+                Seal Jet. Traga a sua gaxeta gasta ou retentor danificado para
+                replicação precisa no mesmo dia.
+              </p>
+              <div
+                class="grid grid-cols-1 sm:grid-cols-3 gap-space-md pt-space-xs"
+              >
+                <div class="flex items-center gap-space-xs">
+                  <span
+                    class="material-symbols-outlined text-secondary-fixed text-[24px]"
+                    >verified_user</span
+                  >
+                  <span class="font-label-code text-body-sm text-white/90"
+                    >Garantia Dimensional Estrita</span
+                  >
+                </div>
+                <div class="flex items-center gap-space-xs">
+                  <span
+                    class="material-symbols-outlined text-secondary-fixed text-[24px]"
+                    >local_shipping</span
+                  >
+                  <span class="font-label-code text-body-sm text-white/90"
+                    >Despacho para Todo o Brasil</span
+                  >
+                </div>
+                <div class="flex items-center gap-space-xs">
+                  <span
+                    class="material-symbols-outlined text-secondary-fixed text-[24px]"
+                    >contact_support</span
+                  >
+                  <span class="font-label-code text-body-sm text-white/90"
+                    >Atendimento Técnico</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div
+              class="lg:col-span-4 bg-industrial-dark p-space-lg rounded-xl space-y-space-md shadow-2xl"
+            >
+              <div class="space-y-space-xs">
+                <h3 class="font-headline-md text-headline-md text-white">
+                  Canal Direto de Cotação
+                </h3>
+                <p class="font-body-sm text-body-sm text-white/70">
+                  Resposta de viabilidade técnica em até 30 minutos úteis.
+                </p>
+              </div>
+              <div class="space-y-space-xs">
+                <a
+                  class="w-full h-12 inline-flex items-center justify-center gap-space-xs bg-secondary text-on-secondary font-headline-sm text-body-sm font-semibold rounded hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed transition-colors shadow-md"
+                  data-path="solicitar-orcamento"
+                  href="#"
+                >
+                  <span class="material-symbols-outlined text-[20px]"
+                    >request_quote</span
+                  >
+                  <span>Solicitar Orçamento Formal</span>
+                </a>
+                <a
+                  class="w-full h-12 inline-flex items-center justify-center gap-space-xs bg-white/10 text-white font-headline-sm text-body-sm font-semibold rounded hover:bg-white/20 transition-colors"
+                  href="https://wa.me/5541991099535?text=Olá,%20tenho%20um%20desenho%20técnico%20para%20cotação%20imediata"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <span
+                    class="material-symbols-outlined text-emerald-glow text-[20px]"
+                    >chat</span
+                  >
+                  <span>Enviar WhatsApp: (41) 99109-9535</span>
+                </a>
+              </div>
+              <div
+                class="pt-space-xs border-t border-white/10 text-center font-label-code text-[0.75rem] text-white/60"
+              >
+                Atendimento PABX:
+                <a
+                  class="text-emerald-glow hover:underline"
+                  href="tel:4135989400"
+                  >(41) 3598-9400</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Interactive Client-side Script for Filtering and Search -->
+        <script>
+          (function () {
+            const searchInput = document.getElementById("catalog-search");
+            const compoundSelect = document.getElementById("compound-filter");
+            const categoryPills = document.querySelectorAll(".category-pill");
+            const productItems = document.querySelectorAll(".product-item");
+
+            let currentCategory = "all";
+
+            function filterCatalog() {
+              const query = (searchInput.value || "").toLowerCase().trim();
+              const compound = compoundSelect.value.toLowerCase();
+
+              productItems.forEach((item) => {
+                const itemCat = item.getAttribute("data-category");
+                const itemText = item.innerText.toLowerCase();
+
+                const matchesCategory =
+                  currentCategory === "all" || itemCat === currentCategory;
+                const matchesQuery = !query || itemText.includes(query);
+
+                let matchesCompound = true;
+                if (compound !== "all") {
+                  matchesCompound = itemText.includes(compound);
+                }
+
+                if (matchesCategory && matchesQuery && matchesCompound) {
+                  item.style.display = "flex";
+                } else {
+                  item.style.display = "none";
+                }
+              });
+            }
+
+            categoryPills.forEach((pill) => {
+              pill.addEventListener("click", function () {
+                categoryPills.forEach((p) => {
+                  p.classList.remove("bg-primary-container", "text-white");
+                  p.classList.add(
+                    "bg-surface-slate",
+                    "text-on-surface-variant",
+                  );
+                });
+
+                this.classList.remove(
+                  "bg-surface-slate",
+                  "text-on-surface-variant",
+                );
+                this.classList.add("bg-primary-container", "text-white");
+
+                currentCategory = this.getAttribute("data-filter");
+                filterCatalog();
+              });
+            });
+
+            if (searchInput) {
+              searchInput.addEventListener("input", filterCatalog);
+            }
+
+            if (compoundSelect) {
+              compoundSelect.addEventListener("change", filterCatalog);
+            }
+          })();
+        </script>
+      </div>
+    </main>
+    <footer
+      class="w-full bg-industrial-dark text-on-primary border-t border-white/10"
+    >
+      <div class="max-w-7xl mx-auto px-margin py-space-2xl">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl"
+        >
+          <div class="space-y-space-md">
+            <div class="flex items-center gap-space-sm">
+              <img
+                alt="Parseals Vedações"
+                class="h-8 w-auto object-contain brightness-0 invert"
+                src="img/logo_parseals.png"
+              />
+              <div class="flex flex-col">
+                <span
+                  class="font-headline-sm text-headline-sm text-white font-bold leading-tight"
+                  >PARSEALS</span
+                ><span
+                  class="font-label-caps text-label-caps text-emerald-glow tracking-widest"
+                  >VEDAÇÕES &amp; GAXETAS</span
+                >
+              </div>
+            </div>
+            <p
+              class="font-body-sm text-body-sm text-on-primary/70 leading-relaxed"
+            >
+              Engenharia de precisão em vedações industriais, gaxetas e
+              componentes usinados sob medida. Parceiro técnico para indústrias
+              pesadas, hidráulica e pneumática de alta performance.
+            </p>
+            <div class="flex items-center gap-space-xs pt-space-xs">
+              <span
+                class="inline-block px-space-xs py-0.5 rounded-lg bg-white/5 border border-white/15 text-white/90 font-label-code text-body-sm"
+                >ISO 9001:2015</span
+              ><span
+                class="inline-block px-space-xs py-0.5 rounded-lg bg-white/5 border border-white/15 text-white/90 font-label-code text-body-sm"
+                >SKF Seal Jet</span
+              >
+            </div>
+          </div>
+          <div class="space-y-space-md">
+            <h4
+              class="font-headline-sm text-headline-sm text-white border-b border-white/10 pb-space-xs flex items-center gap-space-xs"
+            >
+              <span
+                class="material-symbols-outlined text-emerald-glow text-[18px]"
+                >route</span
+              >Navegação Principal
+            </h4>
+            <ul
+              class="space-y-space-xs font-body-sm text-body-sm text-on-primary/75"
+            >
+              <li class="">
+                <a
+                  class="hover:text-emerald-glow transition-colors flex items-center gap-space-xs"
+                  data-path="home"
+                  href="#"
+                  ><span class="material-symbols-outlined text-[14px]"
+                    >chevron_right</span
+                  >Home</a
+                >
+              </li>
+              <li class="">
+                <a
+                  class="hover:text-emerald-glow transition-colors flex items-center gap-space-xs"
+                  data-path="sobre-a-parseals"
+                  href="#"
+                  ><span class="material-symbols-outlined text-[14px]"
+                    >chevron_right</span
+                  >Sobre a Parseals</a
+                >
+              </li>
+              <li class="">
+                <a
+                  class="hover:text-emerald-glow transition-colors flex items-center gap-space-xs"
+                  data-path="produtos"
+                  href="#"
+                  ><span class="material-symbols-outlined text-[14px]"
+                    >chevron_right</span
+                  >Produtos</a
+                >
+              </li>
+              <li class="">
+                <a
+                  class="hover:text-emerald-glow transition-colors flex items-center gap-space-xs"
+                  data-path="usinagem-sob-medida"
+                  href="#"
+                  ><span class="material-symbols-outlined text-[14px]"
+                    >chevron_right</span
+                  >Usinagem sob Medida</a
+                >
+              </li>
+              <li class="">
+                <a
+                  class="hover:text-emerald-glow transition-colors flex items-center gap-space-xs"
+                  data-path="solicitar-orcamento"
+                  href="#"
+                  ><span class="material-symbols-outlined text-[14px]"
+                    >chevron_right</span
+                  >Solicitação de Orçamento</a
+                >
+              </li>
+              <li class="">
+                <a
+                  class="hover:text-emerald-glow transition-colors flex items-center gap-space-xs"
+                  data-path="contato"
+                  href="#"
+                  ><span class="material-symbols-outlined text-[14px]"
+                    >chevron_right</span
+                  >Contato</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="space-y-space-md">
+            <h4
+              class="font-headline-sm text-headline-sm text-white border-b border-white/10 pb-space-xs flex items-center gap-space-xs"
+            >
+              <span
+                class="material-symbols-outlined text-emerald-glow text-[18px]"
+                >precision_manufacturing</span
+              >Linha Técnica
+            </h4>
+            <ul
+              class="space-y-space-xs font-body-sm text-body-sm text-on-primary/75"
+            >
+              <li class="">
+                <a
+                  class="hover:text-emerald-glow transition-colors flex items-center gap-space-xs"
+                  data-path="produtos"
+                  href="#"
+                  ><span class="material-symbols-outlined text-[14px]"
+                    >chevron_right</span
+                  >Gaxetas Hidráulicas &amp; Pneumáticas</a
+                >
+              </li>
+              <li class="">
+                <a
+                  class="hover:text-emerald-glow transition-colors flex items-center gap-space-xs"
+                  data-path="produtos"
+                  href="#"
+                  ><span class="material-symbols-outlined text-[14px]"
+                    >chevron_right</span
+                  >Retentores e Raspadores Industriais</a
+                >
+              </li>
+              <li class="">
+                <a
+                  class="hover:text-emerald-glow transition-colors flex items-center gap-space-xs"
+                  data-path="produtos"
+                  href="#"
+                  ><span class="material-symbols-outlined text-[14px]"
+                    >chevron_right</span
+                  >Anéis O-Ring &amp; Back-up Rings</a
+                >
+              </li>
+              <li class="">
+                <a
+                  class="hover:text-emerald-glow transition-colors flex items-center gap-space-xs"
+                  data-path="usinagem-sob-medida"
+                  href="#"
+                  ><span class="material-symbols-outlined text-[14px]"
+                    >chevron_right</span
+                  >Usinagem CNC Especial (Seal Jet)</a
+                >
+              </li>
+              <li class="">
+                <a
+                  class="hover:text-emerald-glow transition-colors flex items-center gap-space-xs"
+                  data-path="solicitar-orcamento"
+                  href="#"
+                  ><span class="material-symbols-outlined text-[14px]"
+                    >chevron_right</span
+                  >Desenvolvimento sob Desenho ou Amostra</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="space-y-space-md">
+            <h4
+              class="font-headline-sm text-headline-sm text-white border-b border-white/10 pb-space-xs flex items-center gap-space-xs"
+            >
+              <span
+                class="material-symbols-outlined text-emerald-glow text-[18px]"
+                >pin_drop</span
+              >Unidade Industrial
+            </h4>
+            <address
+              class="not-italic font-body-sm text-body-sm text-on-primary/75 space-y-space-xs"
+            >
+              <p class="text-white font-medium">
+                Parseals Vedações Industriais Ltda.
+              </p>
+              <p class="">Neoville - CIC Industrial</p>
+              <p class="">Curitiba - PR | CEP 81312-000</p>
+              <p class="pt-space-xs flex items-center gap-space-xs text-white">
+                <span
+                  class="material-symbols-outlined text-emerald-glow text-[16px]"
+                  >phone_in_talk</span
+                >(41) 3598-9400
+              </p>
+              <p class="flex items-center gap-space-xs text-white">
+                <span
+                  class="material-symbols-outlined text-emerald-glow text-[16px]"
+                  >mail</span
+                >parseals@parseals.com.br
+              </p>
+              <p class="flex items-center gap-space-xs text-emerald-glow">
+                <span class="material-symbols-outlined text-[16px]"
+                  >schedule</span
+                >Seg - Sex: 08:00 às 18:00
+              </p>
+            </address>
+          </div>
+        </div>
+        <div
+          class="mt-space-2xl pt-space-md border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-space-md text-body-sm text-on-primary/60"
+        >
+          <p class="">
+            © 2026 Parseals Vedações Industriais. Todos os direitos reservados.
+          </p>
+          <div class="flex items-center gap-space-md font-body-sm">
+            <a
+              class="hover:text-white transition-colors"
+              data-path="contato"
+              href="#"
+              >Políticas Técnicas</a
+            ><span class="">•</span
+            ><a
+              class="hover:text-white transition-colors"
+              data-path="contato"
+              href="#"
+              >Termos de Fornecimento</a
+            ><span class="">•</span
+            ><a
+              class="hover:text-white transition-colors"
+              data-path="solicitar-orcamento"
+              href="#"
+              >Portal de Orçamentos</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
+      <a
+        class="flex items-center gap-space-xs px-space-md py-space-sm rounded-full bg-secondary text-on-secondary shadow-lg hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed transition-all border border-emerald-glow/40 group"
+        href="https://wa.me/5541991099535"
+        rel="noopener noreferrer"
+        target="_blank"
+        ><span class="material-symbols-outlined text-[24px]">support_agent</span
+        ><span class="font-headline-sm text-body-sm font-semibold pr-1"
+          >Suporte Técnico WhatsApp</span
+        ></a
+      >
+    </div>
+  </body>
+</html>

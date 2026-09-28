@@ -1,0 +1,434 @@
+<!-- SEÇÃO DE COTAÇÃO RÁPIDA & ENGENHARIA REVERSA (FORMULÁRIO DINÂMICO) -->
+        <section
+          class="py-space-2xl bg-surface-slate relative"
+          id="cotacao-rapida"
+        >
+          <div class="max-w-7xl mx-auto px-margin">
+            <div
+              class="bg-surface-card rounded-xl shadow-xl overflow-hidden border border-border-subtle"
+            >
+              <div class="grid grid-cols-1 lg:grid-cols-12">
+                <!-- Coluna Esquerda: Contextualização e SLA -->
+                <div
+                  class="lg:col-span-4 bg-primary p-space-xl text-on-primary flex flex-col justify-between"
+                >
+                  <div class="space-y-space-md">
+                    <div
+                      class="inline-flex items-center gap-2 px-space-xs py-1 rounded bg-white/10 text-emerald-glow font-label-caps text-label-caps"
+                    >
+                      <span class="material-symbols-outlined text-[16px]"
+                        >bolt</span
+                      >
+                      ATENDIMENTO TÉCNICO EXPRESSO
+                    </div>
+                    <h2
+                      class="font-headline-xl text-headline-xl text-white font-bold leading-tight"
+                    >
+                      Orçamento Imediato de Vedações &amp; Gaxetas
+                    </h2>
+                    <p
+                      class="font-body-md text-body-md text-white/80 leading-relaxed"
+                    >
+                      Precisa de reposição urgente para estancar paradas de
+                      máquina ou desenvolvimento de peças especiais sob desenho?
+                      Nossa equipe de engenharia analisa sua solicitação em
+                      tempo recorde.
+                    </p>
+                    <div class="space-y-space-sm pt-space-xs">
+                      <div class="flex items-start gap-3">
+                        <span
+                          class="material-symbols-outlined text-secondary-fixed text-[20px] mt-0.5"
+                          >timer</span
+                        >
+                        <div>
+                          <h3
+                            class="font-headline-sm text-body-md text-white font-semibold"
+                          >
+                            Resposta em até 2 Horas
+                          </h3>
+                          <p class="font-body-sm text-body-sm text-white/70">
+                            Cotações comerciais e técnicas em dias úteis.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="flex items-start gap-3">
+                        <span
+                          class="material-symbols-outlined text-secondary-fixed text-[20px] mt-0.5"
+                          >precision_manufacturing</span
+                        >
+                        <div>
+                          <h3
+                            class="font-headline-sm text-body-md text-white font-semibold"
+                          >
+                            Sem Custo de Ferramental
+                          </h3>
+                          <p class="font-body-sm text-body-sm text-white/70">
+                            Usinagem flexível para peças unitárias ou lotes
+                            seriados.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="flex items-start gap-3">
+                        <span
+                          class="material-symbols-outlined text-secondary-fixed text-[20px] mt-0.5"
+                          >verified_user</span
+                        >
+                        <div>
+                          <h3
+                            class="font-headline-sm text-body-md text-white font-semibold"
+                          >
+                            Análise de Amostra Física
+                          </h3>
+                          <p class="font-body-sm text-body-sm text-white/70">
+                            Traga seu retentor ou gaxeta danificada até nossa
+                            fábrica em Curitiba.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pt-space-lg border-t border-white/10 mt-space-md">
+                    <div class="font-label-code text-body-sm text-white/60">
+                      Dúvida Técnica Urgente?
+                    </div>
+                    <a
+                      class="inline-flex items-center gap-2 text-secondary-fixed hover:text-white font-headline-sm text-body-md mt-1 transition-colors"
+                      href="https://wa.me/5541991099535"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >chat</span
+                      >
+                      (41) 99109-9535 →
+                    </a>
+                  </div>
+                </div>
+                <!-- Coluna Direita: Formulário Interativo de Cotação -->
+                <div class="lg:col-span-8 p-space-xl">
+                  <form
+                    class="space-y-space-lg"
+                    id="quote-form"
+                    onsubmit="
+                      event.preventDefault();
+                      document
+                        .getElementById('quote-feedback')
+                        .classList.remove('hidden');
+                    "
+                  >
+                    <!-- Seletor de Categoria -->
+                    <div>
+                      <label
+                        class="block font-headline-sm text-body-sm text-on-surface font-semibold mb-space-xs"
+                      >
+                        1. Selecione a Linha de Produto ou Serviço
+                      </label>
+                      <div
+                        class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-space-xs"
+                      >
+                        <label class="cursor-pointer">
+                          <input
+                            checked=""
+                            class="peer sr-only"
+                            name="product_type"
+                            type="radio"
+                            value="retentores"
+                          />
+                          <div
+                            class="p-space-sm rounded border border-border-subtle bg-surface text-center peer-checked:border-secondary peer-checked:bg-secondary/5 peer-checked:text-secondary transition-all hover:bg-surface-container-low"
+                          >
+                            <span
+                              class="material-symbols-outlined block mx-auto text-[22px] mb-1"
+                              >adjust</span
+                            >
+                            <span class="font-headline-sm text-body-sm block"
+                              >Retentores</span
+                            >
+                          </div>
+                        </label>
+                        <label class="cursor-pointer">
+                          <input
+                            class="peer sr-only"
+                            name="product_type"
+                            type="radio"
+                            value="gaxetas"
+                          />
+                          <div
+                            class="p-space-sm rounded border border-border-subtle bg-surface text-center peer-checked:border-secondary peer-checked:bg-secondary/5 peer-checked:text-secondary transition-all hover:bg-surface-container-low"
+                          >
+                            <span
+                              class="material-symbols-outlined block mx-auto text-[22px] mb-1"
+                              >line_weight</span
+                            >
+                            <span class="font-headline-sm text-body-sm block"
+                              >Gaxetas</span
+                            >
+                          </div>
+                        </label>
+                        <label class="cursor-pointer">
+                          <input
+                            class="peer sr-only"
+                            name="product_type"
+                            type="radio"
+                            value="oring"
+                          />
+                          <div
+                            class="p-space-sm rounded border border-border-subtle bg-surface text-center peer-checked:border-secondary peer-checked:bg-secondary/5 peer-checked:text-secondary transition-all hover:bg-surface-container-low"
+                          >
+                            <span
+                              class="material-symbols-outlined block mx-auto text-[22px] mb-1"
+                              >radio_button_unchecked</span
+                            >
+                            <span class="font-headline-sm text-body-sm block"
+                              >Anéis O-Ring</span
+                            >
+                          </div>
+                        </label>
+                        <label class="cursor-pointer">
+                          <input
+                            class="peer sr-only"
+                            name="product_type"
+                            type="radio"
+                            value="usinagem"
+                          />
+                          <div
+                            class="p-space-sm rounded border border-border-subtle bg-surface text-center peer-checked:border-secondary peer-checked:bg-secondary/5 peer-checked:text-secondary transition-all hover:bg-surface-container-low"
+                          >
+                            <span
+                              class="material-symbols-outlined block mx-auto text-[22px] mb-1"
+                              >settings_suggest</span
+                            >
+                            <span class="font-headline-sm text-body-sm block"
+                              >Usinadas SKF</span
+                            >
+                          </div>
+                        </label>
+                        <label class="cursor-pointer">
+                          <input
+                            class="peer sr-only"
+                            name="product_type"
+                            type="radio"
+                            value="especial"
+                          />
+                          <div
+                            class="p-space-sm rounded border border-border-subtle bg-surface text-center peer-checked:border-secondary peer-checked:bg-secondary/5 peer-checked:text-secondary transition-all hover:bg-surface-container-low"
+                          >
+                            <span
+                              class="material-symbols-outlined block mx-auto text-[22px] mb-1"
+                              >architecture</span
+                            >
+                            <span class="font-headline-sm text-body-sm block"
+                              >Sob Desenho</span
+                            >
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                    <!-- Medidas Dimensionais Rápidas -->
+                    <div>
+                      <div
+                        class="flex items-center justify-between mb-space-xs"
+                      >
+                        <label
+                          class="font-headline-sm text-body-sm text-on-surface font-semibold"
+                        >
+                          2. Dimensional de Alojamento / Eixo (mm ou Pol)
+                        </label>
+                        <span
+                          class="font-label-code text-[0.75rem] text-on-surface-variant"
+                          >Opcional caso anexe arquivo</span
+                        >
+                      </div>
+                      <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+                        <div>
+                          <div class="relative">
+                            <input
+                              class="w-full h-11 px-3 bg-surface border border-border-subtle rounded focus:border-secondary focus:outline-none font-body-md text-on-surface"
+                              placeholder="Ex: 50,00"
+                              type="text"
+                            />
+                            <span
+                              class="absolute right-3 top-2.5 font-label-code text-[0.75rem] text-on-surface-variant"
+                              >Ø Interno</span
+                            >
+                          </div>
+                        </div>
+                        <div>
+                          <div class="relative">
+                            <input
+                              class="w-full h-11 px-3 bg-surface border border-border-subtle rounded focus:border-secondary focus:outline-none font-body-md text-on-surface"
+                              placeholder="Ex: 72,00"
+                              type="text"
+                            />
+                            <span
+                              class="absolute right-3 top-2.5 font-label-code text-[0.75rem] text-on-surface-variant"
+                              >Ø Externo</span
+                            >
+                          </div>
+                        </div>
+                        <div>
+                          <div class="relative">
+                            <input
+                              class="w-full h-11 px-3 bg-surface border border-border-subtle rounded focus:border-secondary focus:outline-none font-body-md text-on-surface"
+                              placeholder="Ex: 10,00"
+                              type="text"
+                            />
+                            <span
+                              class="absolute right-3 top-2.5 font-label-code text-[0.75rem] text-on-surface-variant"
+                              >Altura (h)</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Dados de Contato e Empresa -->
+                    <div>
+                      <label
+                        class="block font-headline-sm text-body-sm text-on-surface font-semibold mb-space-xs"
+                      >
+                        3. Dados Corporativos &amp; Contato
+                      </label>
+                      <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+                        <div>
+                          <input
+                            class="w-full h-11 px-3 bg-surface border border-border-subtle rounded focus:border-secondary focus:outline-none font-body-md text-on-surface"
+                            placeholder="Seu Nome Completo *"
+                            required=""
+                            type="text"
+                          />
+                        </div>
+                        <div>
+                          <input
+                            class="w-full h-11 px-3 bg-surface border border-border-subtle rounded focus:border-secondary focus:outline-none font-body-md text-on-surface"
+                            placeholder="Empresa / CNPJ *"
+                            required=""
+                            type="text"
+                          />
+                        </div>
+                        <div>
+                          <input
+                            class="w-full h-11 px-3 bg-surface border border-border-subtle rounded focus:border-secondary focus:outline-none font-body-md text-on-surface"
+                            placeholder="E-mail Corporativo *"
+                            required=""
+                            type="email"
+                          />
+                        </div>
+                        <div>
+                          <input
+                            class="w-full h-11 px-3 bg-surface border border-border-subtle rounded focus:border-secondary focus:outline-none font-body-md text-on-surface"
+                            placeholder="WhatsApp / Telefone com DDD *"
+                            required=""
+                            type="tel"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Detalhamento e Nível de Urgência -->
+                    <div class="grid grid-cols-1 sm:grid-cols-12 gap-space-sm">
+                      <div class="sm:col-span-8">
+                        <textarea
+                          class="w-full p-3 bg-surface border border-border-subtle rounded focus:border-secondary focus:outline-none font-body-md text-on-surface"
+                          placeholder="Descreva material requerido (Viton, NBR, Ecopur, PTFE), pressão, fluido de trabalho ou quantidade..."
+                          rows="2"
+                        ></textarea>
+                      </div>
+                      <div class="sm:col-span-4 flex flex-col justify-between">
+                        <div
+                          class="border border-dashed border-border-subtle p-3 rounded text-center bg-surface-slate cursor-pointer hover:border-secondary transition-colors"
+                        >
+                          <span
+                            class="material-symbols-outlined text-secondary text-[22px]"
+                            >attach_file</span
+                          >
+                          <div
+                            class="font-label-code text-[0.75rem] text-on-surface"
+                          >
+                            Anexar Croqui / PDF
+                          </div>
+                          <div
+                            class="font-body-sm text-[0.6875rem] text-on-surface-variant"
+                          >
+                            Até 15MB
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Nível de Prioridade / Urgência -->
+                    <div
+                      class="flex items-center gap-space-md p-space-sm bg-surface-container-low rounded border border-border-subtle"
+                    >
+                      <span
+                        class="font-headline-sm text-body-sm font-semibold text-on-surface flex items-center gap-1"
+                      >
+                        <span
+                          class="material-symbols-outlined text-urgent-red text-[18px]"
+                          >warning</span
+                        >
+                        Regime de Urgência:
+                      </span>
+                      <label class="flex items-center gap-1.5 cursor-pointer">
+                        <input
+                          checked=""
+                          class="text-secondary focus:ring-secondary"
+                          name="urgency"
+                          type="radio"
+                          value="normal"
+                        />
+                        <span class="font-body-sm text-body-sm text-on-surface"
+                          >Padrão Comercial</span
+                        >
+                      </label>
+                      <label class="flex items-center gap-1.5 cursor-pointer">
+                        <input
+                          class="text-urgent-red focus:ring-urgent-red"
+                          name="urgency"
+                          type="radio"
+                          value="parada"
+                        />
+                        <span
+                          class="font-body-sm text-body-sm text-urgent-red font-semibold"
+                          >Parada de Máquina Crítica</span
+                        >
+                      </label>
+                    </div>
+                    <!-- Botão de Envio -->
+                    <div>
+                      <button
+                        class="w-full py-space-md px-space-xl bg-secondary hover:bg-secondary-fixed-dim hover:text-on-secondary-fixed text-white font-headline-sm text-headline-sm font-semibold rounded-lg transition-all shadow-md flex items-center justify-center gap-space-xs"
+                        type="submit"
+                      >
+                        <span class="material-symbols-outlined text-[22px]"
+                          >send</span
+                        >
+                        Enviar para Cotação Imediata (Resposta em até 2h
+                        comerciais)
+                      </button>
+                    </div>
+                    <!-- Mensagem de Confirmação Sucesso (Oculta por padrão) -->
+                    <div
+                      class="hidden p-space-md rounded bg-secondary/10 border border-secondary text-secondary"
+                      id="quote-feedback"
+                    >
+                      <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined"
+                          >check_circle</span
+                        >
+                        <p class="font-headline-sm text-body-md font-semibold">
+                          Solicitação recebida com sucesso pela engenharia da
+                          Parseals!
+                        </p>
+                      </div>
+                      <p
+                        class="font-body-sm text-body-sm mt-1 text-on-surface-variant"
+                      >
+                        Protocolo técnico gerado. Um especialista entrará em
+                        contato via WhatsApp/E-mail com sua proposta
+                        formalizada.
+                      </p>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
